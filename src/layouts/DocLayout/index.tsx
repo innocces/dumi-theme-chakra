@@ -50,12 +50,11 @@ const DocLayout: FC = () => {
         <Center>
           <Container
             maxW="container.xxl"
-            minH={{
-              base: 'calc(var(--chakra-sizes-screenH) - var(--chakra-sizes-18))',
-              md: 'screenH'
-            }}
+            minH="screenH"
             paddingInline={6}
             backgroundColor="brand.200"
+            mt="calc(-1 * var(--chakra-sizes-18))"
+            pt={18}
           >
             <Footer />
           </Container>

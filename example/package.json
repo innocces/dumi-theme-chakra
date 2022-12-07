@@ -1,0 +1,22 @@
+{
+  "private": "true",
+  "description": "chakra theme for dumi2",
+  "version": "0.0.1",
+  "author": "innocces<jiangjiangjiangxi@gmail.com>",
+  "keywords": [
+    "dumi",
+    "dumi-theme",
+    "chakra"
+  ],
+  "scripts": {
+    "start": "dumi dev",
+    "build": "dumi build",
+    "preview": "dumi preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innocces/dumi-theme-chakra.git",
+    "branch": "main",
+    "directory": "example"
+  }
+}

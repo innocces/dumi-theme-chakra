@@ -38,6 +38,11 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
         brand,
         ...(config?.colors ?? {})
       },
+      space: {
+        ...baseTheme.space,
+        ...(config?.space ?? {}),
+        18: '4.5rem'
+      },
       sizes: {
         ...baseTheme.sizes,
         ...(config?.sizes ?? {}),

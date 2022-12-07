@@ -26,6 +26,7 @@ const Header = () => {
       w="full"
       bg={bg}
       backdropFilter="saturate(50%) blur(8px)"
+      shadow="sm"
     >
       <Container
         maxW="container.xxl"
