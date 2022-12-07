@@ -1,0 +1,35 @@
+name: deploy-deno-site
+on: [push]
+
+jobs:
+  deploy:
+    name: deploy-deno-site
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.17.0
+
+      # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
+      - name: Install dependencies
+        run: pnpm install
+
+      # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
+      - name: Build
+        run: pnpm run build
+
+      - name: copy dist
+        run: cp -a ./example/dist/ serve/web
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: dumi-theme-chakra # TODO: replace with Deno Deploy project name
+          entrypoint: main.ts
+          root: serve

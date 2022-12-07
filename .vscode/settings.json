@@ -1,3 +1,4 @@
 {
-  "prettier.trailingComma": "none"
+  "prettier.trailingComma": "none",
+  "deno.enablePaths": ["./serve"]
 }

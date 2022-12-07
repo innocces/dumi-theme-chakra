@@ -1,0 +1,13 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react",
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "tasks": {
+    "dev": "deno run -A --unstable --watch main.ts",
+    "build": "deno run -A --unstable main.ts"
+  }
+}
