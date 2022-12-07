@@ -5,9 +5,11 @@
   "types": "dist/types.d.ts",
   "scripts": {
     "dev": "run-p dev:*",
+    "build": "run-s build:*",
     "dev:father": "father dev",
     "dev:example": "pnpm -F ./example run start",
-    "build": "father build",
+    "build:father": "father build",
+    "build:example": "pnpm -F ./example run build",
     "prepare": "husky install && father link-dev-theme",
     "lint": "pnpm run lint:es && pnpm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",

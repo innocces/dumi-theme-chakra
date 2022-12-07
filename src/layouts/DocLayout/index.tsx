@@ -3,11 +3,20 @@ import React, { type FC, useMemo } from 'react';
 import useThemeConfig from '../../hooks/useThemeConfig';
 
 import { Helmet, useRouteMeta } from 'dumi';
-import { Box, Container, Center, useColorMode } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Center,
+  useColorMode,
+  useColorModeValue
+} from '@chakra-ui/react';
 import DocProvider from '../../components/DocProvider';
 import AnnouncementBar from '../../slots/AnnouncementBar';
 import Header from '../../slots/Header';
 import Footer from '../../slots/Footer';
+
+import heroBackground from '../../../media/hero-background.jpg';
+import heroBackgroundDark from '../../../media/hero-background-dark.jpg';
 
 /**
  * @description cover default struct of dumi layout
@@ -18,6 +27,7 @@ const DocLayout: FC = () => {
   const routeMeta = useRouteMeta();
 
   const { colorMode } = useColorMode();
+  const backgroundImage = useColorModeValue(heroBackground, heroBackgroundDark);
 
   const helmetTitle = useMemo(() => {
     const { name, helmetIcon } = themeConfig;
@@ -34,7 +44,7 @@ const DocLayout: FC = () => {
   const { logo, keywords, author } = themeConfig;
 
   return (
-    <DocProvider>
+    <>
       <Helmet>
         {logo && <link rel="shortcut icon" href={logo} />}
         <meta name="description" content={helmetDescription} />
@@ -44,7 +54,12 @@ const DocLayout: FC = () => {
         {author && <meta name="author" content={author} />}
         <title>{helmetTitle}</title>
       </Helmet>
-      <Box minH="screenH">
+      <Box
+        minH="screenH"
+        backgroundImage={backgroundImage}
+        backgroundSize="cover"
+        backgroundRepeat="no-repeat"
+      >
         <AnnouncementBar />
         <Header />
         <Center>
@@ -52,7 +67,6 @@ const DocLayout: FC = () => {
             maxW="container.xxl"
             minH="screenH"
             paddingInline={6}
-            backgroundColor="brand.200"
             mt="calc(-1 * var(--chakra-sizes-18))"
             pt={18}
           >
@@ -60,8 +74,14 @@ const DocLayout: FC = () => {
           </Container>
         </Center>
       </Box>
-    </DocProvider>
+    </>
   );
 };
 
-export default DocLayout;
+const DocLayoutWithProvider: FC = () => (
+  <DocProvider>
+    <DocLayout />
+  </DocProvider>
+);
+
+export default DocLayoutWithProvider;

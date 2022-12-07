@@ -9,6 +9,9 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' }
   ],
+  sitemap: {
+    hostname: 'https://dumi-theme-chakra.deno.dev'
+  },
   // pass theme config
   themeConfig: {
     name: 'chakra theme',
