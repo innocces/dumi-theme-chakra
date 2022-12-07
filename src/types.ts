@@ -1,6 +1,7 @@
 import type { DocProviderProps } from './components/DocProvider';
 import type { SocialMap } from './components/Social';
 import type { Search } from './slots/SearchResult';
+import type { AnnouncementBarConfig } from './slots/AnnouncementBar';
 
 export type ThemeConfig = DocProviderProps & {
   /**
@@ -28,4 +29,8 @@ export type ThemeConfig = DocProviderProps & {
    * @default true
    */
   search?: boolean | Search;
+  /**
+   * @description announcementBar of top container setting
+   */
+  announcementBar?: AnnouncementBarConfig;
 };

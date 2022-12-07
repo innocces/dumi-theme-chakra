@@ -86,5 +86,10 @@
     "@emotion/styled": "^11.10.5",
     "cmdk": "^0.1.20",
     "framer-motion": "^7.6.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innocces/dumi-theme-chakra.git",
+    "branch": "main"
   }
 }
