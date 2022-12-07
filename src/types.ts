@@ -1,5 +1,6 @@
 import type { DocProviderProps } from './components/DocProvider';
 import type { SocialMap } from './components/Social';
+import type { Search } from './slots/SearchResult';
 
 export type ThemeConfig = DocProviderProps & {
   /**
@@ -22,4 +23,9 @@ export type ThemeConfig = DocProviderProps & {
    * @description head meta author
    */
   author?: string;
+  /**
+   * @description whether use search feature, when boolean, open or close. use object to config more
+   * @default true
+   */
+  search?: boolean | Search;
 };

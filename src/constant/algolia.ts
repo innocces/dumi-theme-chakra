@@ -1,0 +1,33 @@
+export default [
+  [
+    'searchBox.resetButtonTitle',
+    'searchBox.resetButtonAriaLabel',
+    'searchBox.cancelButtonText',
+    'searchBox.cancelButtonAriaLabel'
+  ],
+  [
+    'startScreen.recentSearchesTitle',
+    'startScreen.noRecentSearchesText',
+    'startScreen.saveRecentSearchButtonTitle',
+    'startScreen.removeRecentSearchButtonTitle',
+    'startScreen.favoriteSearchesTitle',
+    'startScreen.removeFavoriteSearchButtonTitle'
+  ],
+  ['errorScreen.titleText', 'errorScreen.helpText'],
+  [
+    'footer.selectText',
+    'footer.selectKeyAriaLabel',
+    'footer.navigateText',
+    'footer.navigateUpKeyAriaLabel',
+    'footer.navigateDownKeyAriaLabel',
+    'footer.closeText',
+    'footer.closeKeyAriaLabel',
+    'footer.searchByText'
+  ],
+  [
+    'noResultsScreen.noResultsText',
+    'noResultsScreen.suggestedQueryText',
+    'noResultsScreen.reportMissingResultsText',
+    'noResultsScreen.reportMissingResultsLinkText'
+  ]
+];

@@ -73,7 +73,7 @@ const LangSwitch: FC = () => {
   if (locales.length <= 1) return null;
 
   return (
-    <Box pl={2.5}>
+    <Box pl={{ base: 2.5, md: 0 }}>
       <Show above="md">
         <Menu>
           <MenuButton
