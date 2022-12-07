@@ -1,0 +1,32 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main # default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [16]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install Deps
+        run: pnpm install
+      - name: Build
+        run: pnpm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/dist
