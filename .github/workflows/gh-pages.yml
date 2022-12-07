@@ -24,7 +24,7 @@ jobs:
       - name: Install Deps
         run: pnpm install
       - name: Build
-        run: pnpx cross-env gh=1 run build
+        run: pnpx cross-env gh=1 pnpm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
