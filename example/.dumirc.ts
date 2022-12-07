@@ -5,6 +5,7 @@ import { description, keywords, author } from './package.json';
 export default defineConfig({
   // disable mfsu for HMR
   mfsu: false,
+  base: process.env.gh ? '/dumi-theme-chakra' : '/',
   locales: [
     { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' }
