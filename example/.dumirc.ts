@@ -41,6 +41,7 @@ export default defineConfig({
       id: 'announce current progress info',
       content: 'dumi-theme-chakra: use Chakra-UI buildIn for Dumi2',
       isCloseable: true
-    }
+    },
+    footer: `Copyright © ${new Date().getFullYear()} Dumi-Theme-Chakra.Innocces`
   }
 });

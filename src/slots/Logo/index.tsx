@@ -5,7 +5,7 @@ import useThemeConfig from '../../hooks/useThemeConfig';
 
 import { Box, Image } from '@chakra-ui/react';
 
-import { LOGO } from '../../constant/config';
+import defaultLogo from '../../media/dumi-theme-chakra-logo.png';
 
 const Logo: FC = () => {
   const { name, logo } = useThemeConfig();
@@ -21,7 +21,7 @@ const Logo: FC = () => {
       >
         <Image
           h={{ base: 8, md: 10 }}
-          src={logo ?? LOGO}
+          src={logo ?? defaultLogo}
           alt={name}
           mr={{ base: 0, md: 2.5 }}
         />
