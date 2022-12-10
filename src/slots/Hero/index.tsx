@@ -48,16 +48,22 @@ const Hero: FC = () => {
 
   return (
     <Box>
-      <Container maxW="container.xxl" p={16}>
+      <Container maxW="container.xxl" p={{ base: 10, md: 16 }}>
         <HeroTitle />
         <Center>
-          <Text fontSize="2xl" fontWeight="semibold" p={8} pt={4}>
+          <Text
+            fontSize="2xl"
+            textAlign="center"
+            fontWeight="semibold"
+            p={{ base: 4, md: 8 }}
+            pt={4}
+          >
             {description}
           </Text>
         </Center>
         {showActionButtons && (
           <Center>
-            <HStack direction={{ base: 'column', md: 'row' }}>
+            <HStack wrap="wrap">
               {actions!.map(({ icon, text, link }, index) => (
                 <Button
                   key={index}
@@ -65,6 +71,7 @@ const Hero: FC = () => {
                   variant={!index ? 'solid' : 'outline'}
                   colorScheme={!index ? 'brand' : undefined}
                   leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
+                  mb={2}
                 >
                   {link ? (
                     isOutLink(link) ? (

@@ -10,7 +10,11 @@ const HeroTitle: FC = () => {
 
   return (
     <Center>
-      <HStack align="start">
+      <HStack
+        align={{ base: 'center', md: 'start' }}
+        justifyContent={{ base: 'center', md: 'start' }}
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
         <Heading
           as="h1"
           mb={8}
