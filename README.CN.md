@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://dumi-chakra.deno.dev" target="_blank" rel="noopener noreferrer">
-    <img style="max-width: 100%" src="https://cdn.jsdelivr.net/gh/innocces/dumi-theme-chakra/media/dumi-theme-chakra.png" alt="dumi-theme-chakra logo" />
+    <img style="max-width: 100%" src="https://cdn.jsdelivr.net/gh/innocces/dumi-theme-chakra/src/media/dumi-theme-chakra.png" alt="dumi-theme-chakra logo" />
   </a>
   <br />
   <h3 align="center">
