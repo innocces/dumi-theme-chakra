@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-import { Box, Stack } from '@chakra-ui/react';
+import { Heading, Stack } from '@chakra-ui/react';
 import Social from '../../components/Social';
 
 const Footer: FC = () => {
@@ -14,7 +14,12 @@ const Footer: FC = () => {
       align="center"
       direction={{ base: 'column', md: 'row' }}
     >
-      <Box dangerouslySetInnerHTML={{ __html: themeConfig.footer ?? '' }}></Box>
+      <Heading
+        as="h4"
+        size="sm"
+        textAlign={{ base: 'center', md: 'left' }}
+        dangerouslySetInnerHTML={{ __html: themeConfig.footer ?? '' }}
+      ></Heading>
       <Social />
     </Stack>
   );
