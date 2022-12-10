@@ -40,6 +40,9 @@ export default defineConfig({
         appId: 'xxxx'
       }
     },
+    hero: {
+      showVersionBadge: true
+    },
     announcementBar: {
       id: 'announce current progress info',
       content: 'dumi-theme-chakra: use Chakra-UI buildIn for Dumi2',

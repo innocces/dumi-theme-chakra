@@ -31,3 +31,11 @@ export function isUndefined(value: unknown): value is undefined {
 export function isOutLink(link: string): boolean {
   return /^(\w+:)\/\/|^(mailto|tel):/.test(link);
 }
+
+export function isEmpty(value: unknown): boolean {
+  return !(Array.isArray(value)
+    ? value.length
+    : isObject(value)
+    ? Object.entries(value).length
+    : value);
+}
