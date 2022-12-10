@@ -1,37 +1,37 @@
 ---
 hero:
   title: Chakra-Theme
-  description: Chakra-UI theme for dumi2
+  description: 使用 Chakra-UI 设计的 dumi2 主题
   actions:
-    - text: Get Started
+    - text: 快速开始
       icon: ''
       link: /guide
-    - text: Advanced
+    - text: 进阶
       icon: ''
       link: /advance
     - text: GitHub
       icon: ''
       link: https://github.com/innocces/dumi-theme-chakra
 features:
-  - title: Themeable
+  - title: 主题
     link: https://chakra-ui.com/docs/styled-system/customize-theme
     icon: https://api.iconify.design/logos:randomcolor.svg
-    description: Customize any part of our components to match your design needs.
-  - title: Accessible
+    description: 定制组件的任何部分，以配合您的设计需求
+  - title: 无障碍
     icon: https://api.iconify.design/fluent:accessibility-checkmark-20-regular.svg
-    description: Chakra UI strictly follows WAI-ARIA standards for all components.
-  - title: Light and Dark UI
+    description: Chakra UI的所有组件都严格遵循WAI-ARIA标准
+  - title: 暗黑模式
     icon: https://api.iconify.design/icon-park:dark-mode.svg
-    description: Optimized for multiple color modes. Use light or dark, your choice.
-  - title: Fully Typed
+    description: 针对多种颜色模式进行了优化。使用浅色或深色，任你选择
+  - title: 类型
     icon: https://api.iconify.design/vscode-icons:folder-type-typescript.svg
-    description: Full TypeScript typing.
-  - title: Rich Features
+    description: 完全类型化
+  - title: 特性
     icon: https://api.iconify.design/icon-park:multi-function-knife.svg
-    description: Out-of-the-box include components & colors
-  - title: Doc Search
+    description: 开箱即用的颜色和组件
+  - title: 文档搜索
     icon: https://api.iconify.design/icon-park:command.svg
-    description: CMDK 、 DocSearch both can.
+    description: CMDK 、 DocSearch 随你选择
 ---
 
 Homepage test

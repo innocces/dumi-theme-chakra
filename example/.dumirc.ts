@@ -19,6 +19,7 @@ export default defineConfig({
     logo: '/dumi-theme-chakra-logo.png',
     helmetIcon: '🍺',
     settingPanelVisible: true,
+    thumbBackground: true,
     description,
     keywords,
     author,
