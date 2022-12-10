@@ -24,5 +24,9 @@
   "algolia.noResultsScreen.noResultsText": "无结果",
   "algolia.noResultsScreen.suggestedQueryText": "尝试搜索",
   "algolia.noResultsScreen.reportMissingResultsText": "确认这个查询应该返回结果?",
-  "algolia.noResultsScreen.reportMissingResultsLinkText": "请告诉我们."
+  "algolia.noResultsScreen.reportMissingResultsLinkText": "请告诉我们.",
+  "theme.header": "主题设置",
+  "theme.cancel": "取消",
+  "theme.confirm": "保存主题",
+  "theme.choose": "选择"
 }

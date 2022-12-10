@@ -7,17 +7,18 @@ export default defineConfig({
   mfsu: false,
   base: process.env.gh ? '/dumi-theme-chakra' : '/',
   locales: [
-    { id: 'zh-CN', name: '中文' },
-    { id: 'en-US', name: 'English' }
+    { id: 'en-US', name: 'English' },
+    { id: 'zh-CN', name: '中文' }
   ],
   sitemap: {
     hostname: 'https://dumi-theme-chakra.deno.dev'
   },
   // pass theme config
   themeConfig: {
-    name: 'chakra theme',
+    name: 'Chakra Theme',
     logo: '/dumi-theme-chakra-logo.png',
     helmetIcon: '🍺',
+    settingPanelVisible: true,
     description,
     keywords,
     author,

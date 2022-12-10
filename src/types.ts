@@ -52,4 +52,10 @@ export type ThemeConfig = DocProviderProps & {
    * @default false
    */
   thumbBackground?: boolean | string;
+  /**
+   * @description setting panel visiblity
+   * @description.zh-CN 是否展示主题设置面板
+   * @default false
+   */
+  settingPanelVisible?: boolean;
 };

@@ -24,5 +24,9 @@
   "algolia.noResultsScreen.noResultsText": "No results for",
   "algolia.noResultsScreen.suggestedQueryText": "Try searching for",
   "algolia.noResultsScreen.reportMissingResultsText": "Believe this query should return results?",
-  "algolia.noResultsScreen.reportMissingResultsLinkText": "Let us know."
+  "algolia.noResultsScreen.reportMissingResultsLinkText": "Let us know.",
+  "theme.header": "Theme Config",
+  "theme.cancel": "Cancel",
+  "theme.confirm": "Save Theme",
+  "theme.choose": "Choose"
 }
