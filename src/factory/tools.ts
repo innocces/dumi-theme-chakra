@@ -22,3 +22,12 @@ export const isAppleDevice = /(mac|iphone|ipod|ipad)/i.test(
 export function isUndefined(value: unknown): value is undefined {
   return Object.prototype.toString.call(value) === '[object Undefined]';
 }
+
+/**
+ * @description whether link is out link
+ * @param {string} link check link string
+ * @returns {boolean}
+ */
+export function isOutLink(link: string): boolean {
+  return /^(\w+:)\/\/|^(mailto|tel):/.test(link);
+}

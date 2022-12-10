@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 import {
   extendTheme,
@@ -9,6 +9,12 @@ import {
   type Colors,
   type Theme
 } from '@chakra-ui/react';
+
+import { ThemeProvider } from '../../hooks/useTheme';
+
+import { isObject } from '../../factory/tools';
+
+import markdown from './markdown';
 
 export type DocProviderProps = {
   /**
@@ -28,14 +34,24 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
   brand = baseTheme.colors.purple
 }) => {
   const { colorMode } = useColorMode();
+  const [themeBrand, setThemeBrand] = useState(brand);
 
   const theme = useMemo(() => {
     return extendTheme({
       initialColorMode: colorMode ?? 'system',
       useSystemColorMode: false,
+      styles: {
+        ...baseTheme.styles,
+        ...(config?.styles ?? {}),
+        global: {
+          ...(baseTheme.styles.global ?? {}),
+          ...(config?.styles?.global ?? {}),
+          ...markdown
+        }
+      },
       ...(config ?? {}),
       colors: {
-        brand,
+        brand: themeBrand,
         ...(config?.colors ?? {})
       },
       space: {
@@ -61,9 +77,28 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
         xxl: '1392px'
       }
     } as ThemeConfig);
-  }, [config, colorMode]);
+  }, [config, colorMode, themeBrand]);
 
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
+  const changeBrand = useCallback(
+    (manualBrand: Colors | string) => {
+      if (isObject(manualBrand)) {
+        setThemeBrand(manualBrand);
+      }
+      if (typeof manualBrand === 'string' && manualBrand in theme.colors) {
+        // @ts-ignore
+        setThemeBrand(theme.colors[manualBrand]);
+      }
+    },
+    [config]
+  );
+
+  return (
+    <ChakraProvider theme={theme}>
+      <ThemeProvider value={{ brand: themeBrand, changeBrand, config: theme }}>
+        {children}
+      </ThemeProvider>
+    </ChakraProvider>
+  );
 };
 
 export default DocProvider;

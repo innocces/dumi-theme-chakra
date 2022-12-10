@@ -1,1 +1,3 @@
 export const ANNOUNCEMENT = 'DUMI-ANNOUNCEMENT';
+
+export const THEME = 'DUMI-THEME-COLOR';
