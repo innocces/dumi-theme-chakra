@@ -1,6 +1,7 @@
 import { defineConfig } from 'dumi';
 
 import { description, keywords, author } from './package.json';
+console.log('process.env.gh', process.env.gh);
 
 export default defineConfig({
   // disable mfsu for HMR

@@ -9,6 +9,7 @@ import {
   Card,
   CardBody,
   Stack,
+  Tag,
   useColorModeValue
 } from '@chakra-ui/react';
 import { Link } from 'dumi';
@@ -46,7 +47,7 @@ const Features: FC = () => {
   return (
     <Container maxW={MAXW} paddingInline={{ base: 0, md: 8 }}>
       <SimpleGrid columns={{ base: 1, md: 3 }} h="max-content">
-        {features.map(({ title, description, emoji, icon, link }) => (
+        {features.map(({ title, description, emoji, icon, link, tag }) => (
           <Card
             key={title}
             m="3%"
@@ -76,8 +77,19 @@ const Features: FC = () => {
                 </Stack>
               )}
               {title && (
-                <Heading as="h2" fontSize="md" lineHeight={6}>
+                <Heading
+                  as="h2"
+                  fontSize="md"
+                  lineHeight={6}
+                  display="flex"
+                  alignItems="center"
+                >
                   <Title link={link}>{title}</Title>
+                  {tag && (
+                    <Tag color="white" ml={2} colorScheme="brand" size="sm">
+                      {tag}
+                    </Tag>
+                  )}
                 </Heading>
               )}
               {description && (
