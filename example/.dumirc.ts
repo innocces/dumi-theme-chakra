@@ -6,7 +6,7 @@ console.log('process.env.gh', process.env.gh);
 export default defineConfig({
   // disable mfsu for HMR
   mfsu: false,
-  base: process.env.gh ? '/dumi-theme-chakra' : '/',
+  base: process.env.gh ? '/dumi-theme-chakra/' : '/',
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '中文' }
