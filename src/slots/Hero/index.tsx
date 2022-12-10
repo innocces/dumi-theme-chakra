@@ -27,8 +27,8 @@ export type HeroConfig = {
 };
 
 const icons = {
-  github: Github,
-  discord: Discord
+  github: <Github />,
+  discord: <Discord />
 };
 
 const ActionLeftIcon: FC<{ icon: string }> = ({ icon }) =>

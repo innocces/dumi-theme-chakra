@@ -4,13 +4,11 @@ hero:
   description: 使用 Chakra-UI 设计的 dumi2 主题
   actions:
     - text: 快速开始
-      icon: ''
       link: /guide
     - text: 进阶
-      icon: ''
       link: /advance
     - text: GitHub
-      icon: ''
+      icon: github
       link: https://github.com/innocces/dumi-theme-chakra
 features:
   - title: 主题

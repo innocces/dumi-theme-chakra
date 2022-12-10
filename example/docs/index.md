@@ -4,13 +4,11 @@ hero:
   description: Chakra-UI theme for dumi2
   actions:
     - text: Get Started
-      icon: ''
       link: /guide
     - text: Advanced
-      icon: ''
       link: /advance
     - text: GitHub
-      icon: ''
+      icon: github
       link: https://github.com/innocces/dumi-theme-chakra
 features:
   - title: Themeable
