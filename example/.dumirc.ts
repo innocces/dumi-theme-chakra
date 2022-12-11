@@ -7,12 +7,17 @@ export default defineConfig({
   // disable mfsu for HMR
   mfsu: false,
   base: process.env.gh ? '/dumi-theme-chakra/' : '/',
+  publicPath: process.env.gh ? '/dumi-theme-chakra/' : '/',
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '中文' }
   ],
   sitemap: {
     hostname: 'https://dumi-theme-chakra.deno.dev'
+  },
+  clickToComponent: {},
+  codeSplitting: {
+    jsStrategy: 'granularChunks'
   },
   // pass theme config
   themeConfig: {
