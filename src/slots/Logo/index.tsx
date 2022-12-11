@@ -3,7 +3,7 @@ import React, { type FC } from 'react';
 import { Link, useLocale } from 'dumi';
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-import { Box, Image } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 
 import defaultLogo from '../../media/dumi-theme-chakra-logo.png';
 
@@ -25,7 +25,9 @@ const Logo: FC = () => {
           alt={name}
           mr={{ base: 0, md: 2.5 }}
         />
-        {name}
+        <Text whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+          {name}
+        </Text>
       </Box>
     </Link>
   );

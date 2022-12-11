@@ -36,9 +36,8 @@ const ActionLeftIcon: FC<{ icon: string }> = ({ icon }) =>
   icons[icon] ?? <Image src={icon} alt="action button left icon" />;
 
 const Hero: FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { config, ...hero } = useHero();
-
+  console.log(config);
   const { actions, description } = hero ?? {};
 
   const showActionButtons = useMemo<boolean>(() => {
