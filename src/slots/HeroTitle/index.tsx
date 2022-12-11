@@ -5,7 +5,7 @@ import useHero from '../../hooks/useHero';
 import usePackage from '../../hooks/usePackage';
 
 const HeroTitle: FC = () => {
-  const { title, showVersionBadge } = useHero();
+  const { title, config: { showVersionBadge } = {} } = useHero();
   const { version = 'unknown' } = usePackage();
 
   return (

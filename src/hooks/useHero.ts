@@ -17,13 +17,14 @@ export type HeroActionItem = Required<HeroStruct>['actions'][0] & {
 
 export type HeroWithIcon = Omit<HeroStruct, 'actions'> & {
   actions?: HeroActionItem[];
-} & HeroConfig;
+  config?: HeroConfig;
+};
 
 export default function useHero(): HeroWithIcon {
   const { hero = {} } = useThemeConfig() ?? {};
   const routeMetaHero = useRouteMeta().frontmatter?.hero ?? {};
   return {
-    ...hero,
+    config: hero,
     ...routeMetaHero
   };
 }
