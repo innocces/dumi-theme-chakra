@@ -3,11 +3,16 @@ import { defineConfig } from 'dumi';
 import { description, keywords, author } from './package.json';
 console.log('process.env.gh', process.env.gh);
 
+function withGH(uri: string): string {
+  const prefix = process.env.gh ? '/dumi-theme-chakra/' : '/';
+  return [prefix, uri].join('');
+}
+
 export default defineConfig({
   // disable mfsu for HMR
   mfsu: false,
-  base: process.env.gh ? '/dumi-theme-chakra/' : '/',
-  publicPath: process.env.gh ? '/dumi-theme-chakra/' : '/',
+  base: withGH(''),
+  publicPath: withGH(''),
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '中文' }
@@ -22,7 +27,7 @@ export default defineConfig({
   // pass theme config
   themeConfig: {
     name: 'Chakra Theme',
-    logo: '/dumi-theme-chakra-logo.png',
+    logo: withGH('dumi-theme-chakra-logo.png'),
     helmetIcon: '🍺',
     settingPanelVisible: true,
     thumbBackground: true,
