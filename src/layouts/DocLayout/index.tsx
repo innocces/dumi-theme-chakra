@@ -2,7 +2,7 @@ import React, { type FC, useMemo } from 'react';
 
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-import { Helmet, useRouteMeta, useOutlet } from 'dumi';
+import { Helmet, useRouteMeta, useOutlet, useSidebarData } from 'dumi';
 import {
   Box,
   Container,
@@ -38,6 +38,7 @@ const DocLayout: FC = () => {
   const themeConfig = useThemeConfig();
   const routeMeta = useRouteMeta();
   const outlet = useOutlet();
+  const sidebar = useSidebarData();
 
   const { colorMode } = useColorMode();
   const sidebarMenuBg = useColorModeValue('whiteAlpha.400', 'gray.800');
@@ -100,19 +101,23 @@ const DocLayout: FC = () => {
         )}
         <AnnouncementBar />
         <Header />
-        <Hide above="md">
-          <HStack
-            justify="space-between"
-            bg={sidebarMenuBg}
-            borderTop="1px"
-            borderTopColor={sidebarMenuBorderColor}
-            borderTopStyle="solid"
-          >
-            <Button variant="ghost" onClick={onOpen}>
-              <HamburgerIcon />
-            </Button>
-          </HStack>
-        </Hide>
+        {sidebar && (
+          <Hide above="md">
+            <Box position="sticky" top={18}>
+              <HStack
+                justify="space-between"
+                bg={sidebarMenuBg}
+                borderTop="1px"
+                borderTopColor={sidebarMenuBorderColor}
+                borderTopStyle="solid"
+              >
+                <Button variant="ghost" onClick={onOpen}>
+                  <HamburgerIcon />
+                </Button>
+              </HStack>
+            </Box>
+          </Hide>
+        )}
         <Hero />
         <Features />
         <Container

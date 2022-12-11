@@ -18,7 +18,8 @@ const HeroTitle: FC = () => {
         <Heading
           as="h1"
           mb={8}
-          fontSize="7xl"
+          textAlign="center"
+          fontSize={{ base: '5xl', md: '7xl' }}
           bgGradient="linear(to-r, brand.200, brand.500)"
           color="transparent"
           backgroundClip="text"
