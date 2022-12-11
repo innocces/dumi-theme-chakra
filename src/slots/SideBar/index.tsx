@@ -16,6 +16,7 @@ import {
   chakra,
   useColorModeValue
 } from '@chakra-ui/react';
+import Toc from '../Toc';
 
 export type SidebarConfig = {
   isOpen: boolean;
@@ -35,9 +36,16 @@ const SideBarMenu: FC<{
 }> = ({ menu }) => {
   const groupBorderColor = useColorModeValue('whiteAlpha.500', 'gray.400');
   const activeLinkColor = useColorModeValue('brand.500', 'brand.300');
+  const { pathname } = useLocation();
 
   return (
-    <Box w={{ base: 'full', md: '13rem' }} h="full" overflow="auto">
+    <Box
+      w={{ base: 'full', md: '13rem' }}
+      h={{ base: 'full', md: 'calc(100vh - var(--chakra-sizes-18))' }}
+      position={{ base: 'static', md: 'sticky' }}
+      top={{ base: 0, md: 18 }}
+      overflow="auto"
+    >
       {menu.map(({ title, children }, index) => (
         <Box
           key={index}
@@ -50,7 +58,7 @@ const SideBarMenu: FC<{
             h={8}
             lineHeight={8}
             as="h2"
-            fontSize="sm"
+            fontSize="md"
             whiteSpace="nowrap"
             textOverflow="ellipsis"
             overflow="hidden"
@@ -61,6 +69,8 @@ const SideBarMenu: FC<{
             {children.map(({ link, title: childTitle, toc }) => (
               <Box key={link}>
                 <Nav
+                  position="sticky"
+                  top={0}
                   h={8}
                   paddingBlock={1}
                   display="block"
@@ -79,7 +89,7 @@ const SideBarMenu: FC<{
                   <Text
                     as="span"
                     lineHeight={5}
-                    fontSize="sm"
+                    fontSize="md"
                     whiteSpace="nowrap"
                     textOverflow="ellipsis"
                     overflow="hidden"
@@ -87,7 +97,12 @@ const SideBarMenu: FC<{
                     {childTitle}
                   </Text>
                 </Nav>
-                {toc && <div>toc</div>}
+                {toc && <Toc />}
+                {link === pathname && !toc && (
+                  <Hide above="md">
+                    <Toc />
+                  </Hide>
+                )}
               </Box>
             ))}
           </Stack>

@@ -13,6 +13,7 @@ specifiers:
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
   '@umijs/lint': ^4.0.36
+  animated-scroll-to: ^2.3.0
   cmdk: ^0.1.20
   dumi: ^2.0.13
   eslint: ^8.29.0
@@ -37,6 +38,7 @@ dependencies:
   '@emotion/react': 11.10.5_xl5my4wapvq2ctl7qwehtbgorq
   '@emotion/styled': 11.10.5_3djhvnr4jirfvebjqpipo7gthy
   '@makotot/ghostui': 2.0.0_react@18.2.0
+  animated-scroll-to: 2.3.0
   cmdk: 0.1.20_ib3m5ricvtkl2cll7qpr2f6lvq
   framer-motion: 7.6.19_biqbaboplfbrettd7655fr4n2y
 
@@ -2429,7 +2431,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       hoist-non-react-statics: 3.3.2
       react: 18.1.0
       react-is: 16.13.1
@@ -2441,7 +2443,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       react-is: 16.13.1
@@ -3803,7 +3805,7 @@ packages:
   /@umijs/history/5.3.1:
     resolution: {integrity: sha512-/e0cEGrR2bIWQD7pRl3dl9dcyRGeC9hoW0OCvUTT/hjY0EfUrkd6G8ZanVghPMpDuY5usxq9GVcvrT8KNXLWvA==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       query-string: 6.14.1
     dev: true
 
@@ -4214,7 +4216,6 @@ packages:
 
   /animated-scroll-to/2.3.0:
     resolution: {integrity: sha512-PT/5MSKCWQaK2kuOl2HT2KJMuJEvUS4/TgMhWy82c2EmF74/CIkvPBPKOvd8nMYP6Higo7xCn49/iSW9BccMoQ==}
-    dev: true
 
   /ansi-align/2.0.0:
     resolution: {integrity: sha512-TdlOggdA/zURfMYa7ABC66j+oqfMew58KpJMbUlH3bcZP1b+cBHIHDDn5uH9INsxrHBPjsqM0tDB4jPTF/vgJA==}
@@ -7459,7 +7460,7 @@ packages:
   /history/5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
     dev: true
 
   /hmac-drbg/1.0.1:
@@ -10912,7 +10913,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.2.0
@@ -10927,7 +10928,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.1.0

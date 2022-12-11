@@ -1,7 +1,6 @@
 import React, { type FC, useMemo } from 'react';
 
 import {
-  Box,
   Container,
   Text,
   Center,
@@ -47,50 +46,48 @@ const Hero: FC = () => {
   if (isEmpty(hero)) return null;
 
   return (
-    <Box>
-      <Container maxW="container.xxl" p={{ base: 10, md: 16 }}>
-        <HeroTitle />
+    <Container maxW="container.xxl" p={{ base: 10, md: 16 }}>
+      <HeroTitle />
+      <Center>
+        <Text
+          fontSize="2xl"
+          textAlign="center"
+          fontWeight="semibold"
+          p={{ base: 4, md: 8 }}
+          pt={4}
+        >
+          {description}
+        </Text>
+      </Center>
+      {showActionButtons && (
         <Center>
-          <Text
-            fontSize="2xl"
-            textAlign="center"
-            fontWeight="semibold"
-            p={{ base: 4, md: 8 }}
-            pt={4}
-          >
-            {description}
-          </Text>
-        </Center>
-        {showActionButtons && (
-          <Center>
-            <HStack wrap="wrap">
-              {actions!.map(({ icon, text, link }, index) => (
-                <Button
-                  key={index}
-                  size="lg"
-                  variant={!index ? 'solid' : 'outline'}
-                  colorScheme={!index ? 'brand' : undefined}
-                  leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
-                  mb={2}
-                >
-                  {link ? (
-                    isOutLink(link) ? (
-                      <a href={link} target="_blank" rel="noreferrer">
-                        {text}
-                      </a>
-                    ) : (
-                      <Link to={link}>{text}</Link>
-                    )
+          <HStack wrap="wrap">
+            {actions!.map(({ icon, text, link }, index) => (
+              <Button
+                key={index}
+                size="lg"
+                variant={!index ? 'solid' : 'outline'}
+                colorScheme={!index ? 'brand' : undefined}
+                leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
+                mb={2}
+              >
+                {link ? (
+                  isOutLink(link) ? (
+                    <a href={link} target="_blank" rel="noreferrer">
+                      {text}
+                    </a>
                   ) : (
-                    text
-                  )}
-                </Button>
-              ))}
-            </HStack>
-          </Center>
-        )}
-      </Container>
-    </Box>
+                    <Link to={link}>{text}</Link>
+                  )
+                ) : (
+                  text
+                )}
+              </Button>
+            ))}
+          </HStack>
+        </Center>
+      )}
+    </Container>
   );
 };
 

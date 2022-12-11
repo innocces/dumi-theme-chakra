@@ -1,8 +1,15 @@
-import React, { type FC, useMemo } from 'react';
+import React, { type FC, useMemo, useEffect } from 'react';
 
 import useThemeConfig from '../../hooks/useThemeConfig';
+import useLoading from '../../hooks/useLoading';
 
-import { Helmet, useRouteMeta, useOutlet, useSidebarData } from 'dumi';
+import {
+  Helmet,
+  useRouteMeta,
+  useOutlet,
+  useSidebarData,
+  useLocation
+} from 'dumi';
 import {
   Box,
   Container,
@@ -15,6 +22,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import animateScrollTo from 'animated-scroll-to';
 import DocProvider from '../../components/DocProvider';
 import SettingPanel from '../../builtins/SettingPanel';
 import AnnouncementBar from '../../slots/AnnouncementBar';
@@ -23,6 +31,7 @@ import Hero from '../../slots/Hero';
 import Features from '../../slots/Features';
 import Content from '../../slots/Content';
 import SideBar from '../../slots/SideBar';
+import Toc from '../../slots/Toc';
 import Footer from '../../slots/Footer';
 
 import { isUndefined } from '../../factory/tools';
@@ -39,6 +48,8 @@ const DocLayout: FC = () => {
   const routeMeta = useRouteMeta();
   const outlet = useOutlet();
   const sidebar = useSidebarData();
+  const { hash } = useLocation();
+  const loading = useLoading();
 
   const { colorMode } = useColorMode();
   const sidebarMenuBg = useColorModeValue('whiteAlpha.400', 'gray.800');
@@ -71,6 +82,24 @@ const DocLayout: FC = () => {
       ? thumbBackground
       : backgroundImage;
   }, [thumbBackground, backgroundImage]);
+
+  // handle hash change or visit page hash after async chunk loaded
+  useEffect(() => {
+    const id = hash.replace('#', '');
+
+    if (id) {
+      setTimeout(() => {
+        const elm = document.getElementById(decodeURIComponent(id));
+
+        if (elm) {
+          // animated-scroll-to instead of native scroll
+          animateScrollTo(elm.offsetTop - 80, {
+            maxDuration: 300
+          });
+        }
+      }, 1);
+    }
+  }, [loading, hash]);
 
   return (
     <>
@@ -125,12 +154,25 @@ const DocLayout: FC = () => {
           paddingInline={6}
           flexGrow={1}
           display="flex"
+          className="chakra-theme-container"
         >
           <SideBar isOpen={isOpen} onClose={onClose} />
           <Content>
             <Box flexGrow={1}>{outlet}</Box>
             <Footer />
           </Content>
+          {routeMeta?.frontmatter?.toc === 'content' && (
+            <Show above="md">
+              <Box
+                pt={8}
+                h="calc(100vh - var(--chakra-sizes-18))"
+                position="sticky"
+                top={18}
+              >
+                <Toc />
+              </Box>
+            </Show>
+          )}
         </Container>
       </Box>
     </>
@@ -139,7 +181,6 @@ const DocLayout: FC = () => {
 
 const DocLayoutWithProvider: FC = () => {
   const { brand, config } = useThemeConfig() ?? {};
-
   return (
     <DocProvider brand={brand} config={config}>
       <DocLayout />

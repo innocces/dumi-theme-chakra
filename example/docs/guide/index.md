@@ -5,6 +5,7 @@ nav:
 group:
   title: Intro
   order: -1
+toc: content
 ---
 
 # What?
