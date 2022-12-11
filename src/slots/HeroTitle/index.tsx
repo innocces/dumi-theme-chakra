@@ -11,6 +11,7 @@ const HeroTitle: FC = () => {
   return (
     <Center>
       <HStack
+        position="relative"
         align={{ base: 'center', md: 'start' }}
         justifyContent={{ base: 'center', md: 'start' }}
         flexDirection={{ base: 'column', md: 'row' }}
@@ -28,7 +29,13 @@ const HeroTitle: FC = () => {
           {title}
         </Heading>
         {showVersionBadge ? (
-          <Tag colorScheme="brand" color="whiteAlpha.900">
+          <Tag
+            position={{ base: 'relative', md: 'absolute' }}
+            top={{ base: 0, md: 0 }}
+            left={{ base: -2, md: '100%' }}
+            colorScheme="brand"
+            color="whiteAlpha.900"
+          >
             V{version}
           </Tag>
         ) : null}
