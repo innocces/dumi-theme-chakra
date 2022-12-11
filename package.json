@@ -85,6 +85,7 @@
     "@docsearch/react": "^3.3.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@makotot/ghostui": "^2.0.0",
     "cmdk": "^0.1.20",
     "framer-motion": "^7.6.19"
   },

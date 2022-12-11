@@ -4,9 +4,9 @@ hero:
   description: 使用 Chakra-UI 设计的 dumi2 主题
   actions:
     - text: 快速开始
-      link: /guide
+      link: /zh-CN/guide
     - text: 进阶
-      link: /advance
+      link: /zh-CN/advance
     - text: GitHub
       icon: github
       link: https://github.com/innocces/dumi-theme-chakra
@@ -27,7 +27,7 @@ features:
   - title: 类型
     icon: https://api.iconify.design/vscode-icons:folder-type-typescript.svg
     description: 完全类型化
-  - title: 特性
+  - title: 丰富特性
     icon: https://api.iconify.design/icon-park:multi-function-knife.svg
     description: 开箱即用的颜色和组件
   - title: 文档搜索

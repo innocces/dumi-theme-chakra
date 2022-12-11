@@ -5,7 +5,7 @@ import {
   Show,
   Hide,
   Box,
-  Button,
+  Text,
   Stack,
   Heading,
   Drawer,
@@ -30,8 +30,11 @@ export type SideBarData = Omit<SideBarDataGroup, 'children'> & {
 
 export const Nav = chakra(NavLink) as typeof NavLink;
 
-const SideBarMenu: FC<{ menu: SideBarData[] }> = ({ menu }) => {
-  const groupBorderColor = useColorModeValue('whiteAlpha.400', 'gray.400');
+const SideBarMenu: FC<{
+  menu: SideBarData[];
+}> = ({ menu }) => {
+  const groupBorderColor = useColorModeValue('whiteAlpha.500', 'gray.400');
+  const activeLinkColor = useColorModeValue('brand.500', 'brand.300');
 
   return (
     <Box w={{ base: 'full', md: '13rem' }} h="full" overflow="auto">
@@ -43,28 +46,46 @@ const SideBarMenu: FC<{ menu: SideBarData[] }> = ({ menu }) => {
           borderTopColor={groupBorderColor}
           borderTopStyle="solid"
         >
-          <Heading paddingBlock={1.5} as="h2" size="sm">
+          <Heading
+            h={8}
+            lineHeight={8}
+            as="h2"
+            fontSize="sm"
+            whiteSpace="nowrap"
+            textOverflow="ellipsis"
+            overflow="hidden"
+          >
             {title}
           </Heading>
           <Stack>
             {children.map(({ link, title: childTitle, toc }) => (
               <Box key={link}>
                 <Nav
+                  h={8}
+                  paddingBlock={1}
                   display="block"
                   cursor="pointer"
                   w="full"
                   to={link}
                   title={childTitle}
+                  opacity={0.9}
+                  sx={{
+                    '&.active': {
+                      color: activeLinkColor
+                    }
+                  }}
                   end
                 >
-                  <Button
-                    variant="ghost"
-                    w="full"
-                    justifyContent="start"
-                    paddingInline={0.5}
+                  <Text
+                    as="span"
+                    lineHeight={5}
+                    fontSize="sm"
+                    whiteSpace="nowrap"
+                    textOverflow="ellipsis"
+                    overflow="hidden"
                   >
                     {childTitle}
-                  </Button>
+                  </Text>
                 </Nav>
                 {toc && <div>toc</div>}
               </Box>
