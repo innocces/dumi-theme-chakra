@@ -21,9 +21,6 @@ export default defineConfig({
     hostname: 'https://dumi-theme-chakra.deno.dev'
   },
   clickToComponent: {},
-  codeSplitting: {
-    jsStrategy: 'granularChunks'
-  },
   // pass theme config
   themeConfig: {
     name: 'Chakra Theme',
