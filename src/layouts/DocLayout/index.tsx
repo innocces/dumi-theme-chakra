@@ -52,7 +52,7 @@ const DocLayout: FC = () => {
   const loading = useLoading();
 
   const { colorMode } = useColorMode();
-  const sidebarMenuBg = useColorModeValue('whiteAlpha.400', 'gray.800');
+  const sidebarMenuBg = useColorModeValue('whiteAlpha.800', 'gray.800');
   const sidebarMenuBorderColor = useColorModeValue(
     'transparent',
     'whiteAlpha.400'
@@ -132,7 +132,7 @@ const DocLayout: FC = () => {
         <Header />
         {sidebar && (
           <Hide above="md">
-            <Box position="sticky" top={18}>
+            <Box position="sticky" top={18} zIndex={10}>
               <HStack
                 justify="space-between"
                 bg={sidebarMenuBg}

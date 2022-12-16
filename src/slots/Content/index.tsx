@@ -12,7 +12,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Stack
       flexGrow={1}
-      paddingInline={8}
+      paddingInline={{ base: 0, md: 8 }}
       pt={sidebar ? { base: 2, md: 8 } : undefined}
       borderLeft={sidebar ? { base: undefined, md: '1px solid' } : undefined}
       borderLeftColor={{ base: 'transparent', md: borderLeftColor }}
