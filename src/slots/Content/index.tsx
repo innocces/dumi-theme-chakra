@@ -3,6 +3,8 @@ import React, { type FC, type PropsWithChildren } from 'react';
 import { useSidebarData } from 'dumi';
 import { Stack, useColorModeValue } from '@chakra-ui/react';
 
+import './heti.scss';
+
 const Content: FC<PropsWithChildren> = ({ children }) => {
   const sidebar = useSidebarData();
   const borderLeftColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.200');

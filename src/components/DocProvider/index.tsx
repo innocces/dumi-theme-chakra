@@ -7,7 +7,8 @@ import {
   theme as baseTheme,
   type ThemeConfig,
   type Colors,
-  type Theme
+  type Theme,
+  type StyleFunctionProps
 } from '@chakra-ui/react';
 
 import { ThemeProvider } from '../../hooks/useTheme';
@@ -43,11 +44,11 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
       styles: {
         ...baseTheme.styles,
         ...(config?.styles ?? {}),
-        global: {
+        global: (props: StyleFunctionProps) => ({
           ...(baseTheme.styles.global ?? {}),
           ...(config?.styles?.global ?? {}),
-          ...markdown
-        }
+          ...markdown(props)
+        })
       },
       ...(config ?? {}),
       colors: {

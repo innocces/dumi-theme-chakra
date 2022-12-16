@@ -1,0 +1,9 @@
+$root-selector: '.markdown';
+$line-length: 100%;
+
+// dark mode
+$darkmode: 'manual';
+$manualmode-dark-selector: '[data-theme="dark"]';
+
+
+@import 'heti/lib/heti.scss';
