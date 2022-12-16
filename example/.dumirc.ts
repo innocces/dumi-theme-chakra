@@ -17,6 +17,7 @@ export default defineConfig({
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '中文' }
   ],
+  devtool: 'cheap-module-source-map',
   sitemap: {
     hostname: 'https://dumi-theme-chakra.deno.dev'
   },
