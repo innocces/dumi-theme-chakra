@@ -27,6 +27,7 @@ import DocProvider from '../../components/DocProvider';
 import SettingPanel from '../../builtins/SettingPanel';
 import AnnouncementBar from '../../slots/AnnouncementBar';
 import Header from '../../slots/Header';
+import NavBar from '../../slots/NavBar';
 import Hero from '../../slots/Hero';
 import Features from '../../slots/Features';
 import Content from '../../slots/Content';
@@ -60,6 +61,7 @@ const DocLayout: FC = () => {
   const backgroundImage = useColorModeValue(heroBackground, heroBackgroundDark);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navDisclosure = useDisclosure();
 
   const helmetTitle = useMemo(() => {
     const { name, helmetIcon } = themeConfig;
@@ -129,7 +131,12 @@ const DocLayout: FC = () => {
           </Show>
         )}
         <AnnouncementBar />
-        <Header />
+        <Header>
+          <NavBar
+            isOpen={navDisclosure.isOpen}
+            onClose={navDisclosure.onClose}
+          />
+        </Header>
         {sidebar && (
           <Hide above="md">
             <Box position="sticky" top={18} zIndex={10}>
@@ -141,6 +148,9 @@ const DocLayout: FC = () => {
                 borderTopStyle="solid"
               >
                 <Button variant="ghost" onClick={onOpen}>
+                  <HamburgerIcon />
+                </Button>
+                <Button variant="ghost" onClick={navDisclosure.onOpen}>
                   <HamburgerIcon />
                 </Button>
               </HStack>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type FC, type PropsWithChildren } from 'react';
 
 import {
   Box,
@@ -13,7 +13,7 @@ import LangSwitch from '../LangSwitch';
 import Logo from '../Logo';
 import SearchBar from '../SearchBar';
 
-const Header = () => {
+const Header: FC<PropsWithChildren> = ({ children }) => {
   const bg = useColorModeValue('whiteAlpha.800', 'gray.800');
 
   return (
@@ -37,6 +37,7 @@ const Header = () => {
       >
         <Logo />
         <Stack direction="row" spacing={{ base: 0, md: 2.5 }}>
+          {children}
           <SearchBar />
           <Show above="md">
             <Social />
