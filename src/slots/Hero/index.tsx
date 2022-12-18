@@ -6,10 +6,11 @@ import {
   Center,
   HStack,
   Button,
-  Image
+  Image,
+  Icon
 } from '@chakra-ui/react';
-import Discord from '../../components/Icons/Discord';
-import Github from '../../components/Icons/Github';
+import { VscGithub as Github } from 'react-icons/vsc';
+import { SiDiscord as Discord } from 'react-icons/si';
 import HeroTitle from '../HeroTitle';
 import { Link } from 'dumi';
 
@@ -26,8 +27,8 @@ export type HeroConfig = {
 };
 
 const icons = {
-  github: <Github />,
-  discord: <Discord />
+  github: <Icon as={Github} />,
+  discord: <Icon as={Discord} />
 };
 
 const ActionLeftIcon: FC<{ icon: string }> = ({ icon }) =>

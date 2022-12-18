@@ -2,9 +2,9 @@ import React, { type FC, type AnchorHTMLAttributes } from 'react';
 
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-import { Stack, Button } from '@chakra-ui/react';
-import Github from '../Icons/Github';
-import Discord from '../Icons/Discord';
+import { Stack, Button, Icon } from '@chakra-ui/react';
+import { VscGithub as Github } from 'react-icons/vsc';
+import { SiDiscord as Discord } from 'react-icons/si';
 
 /**
  * @description social type enum
@@ -61,7 +61,11 @@ const Social: FC = () => {
             fontSize="xl"
             padding={0}
           >
-            {type === SOCIALS.GITHUB ? <Github /> : <Discord />}
+            {type === SOCIALS.GITHUB ? (
+              <Icon as={Github} />
+            ) : (
+              <Icon as={Discord} />
+            )}
           </Button>
         )
       )}

@@ -28,9 +28,9 @@ const Nav = () => {
   const { pathname } = useLocation();
   const nav = useNavData();
   const activeLinkColor = useColorModeValue('brand.500', 'brand.300');
-  console.log(nav, pathname);
+
   return (
-    <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={4}>
+    <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={0}>
       {nav.map(({ link, title }) => {
         // TODO: activePath may use root locale, active error
         const outLink = isOutLink(link);
