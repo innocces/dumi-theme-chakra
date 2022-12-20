@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import React, { useMemo, type FC } from 'react';
 
 import { Link, useLocale } from 'dumi';
 import useThemeConfig from '../../hooks/useThemeConfig';
@@ -11,8 +11,13 @@ const Logo: FC = () => {
   const { name, logo } = useThemeConfig();
   const locale = useLocale();
 
+  const HomePageLink = useMemo(() => {
+    const link = 'base' in locale ? locale.base : '/';
+    return link.endsWith('/') ? link : link + '/';
+  }, [locale]);
+
   return (
-    <Link to={'base' in locale ? locale.base : '/'}>
+    <Link to={HomePageLink}>
       <Box
         display="flex"
         alignItems="center"
