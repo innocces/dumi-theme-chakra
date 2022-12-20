@@ -45,7 +45,7 @@ const markDown: SystemStyleFunction = (props) => ({
     'h1, h2, h3, h4, h5, h6': {
       cursor: 'pointer',
 
-      '> a[aria-hidden]:first-child': {
+      '> a[aria-hidden]:first-of-type': {
         float: 'left',
         width: 5,
         paddingInlineEnd: 1,
@@ -69,7 +69,7 @@ const markDown: SystemStyleFunction = (props) => ({
         }
       },
 
-      '&:not(:hover) > a[aria-hidden]:first-child > .icon-link': {
+      '&:not(:hover) > a[aria-hidden]:first-of-type > .icon-link': {
         visibility: 'hidden'
       }
     }

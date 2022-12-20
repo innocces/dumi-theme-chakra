@@ -11,6 +11,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <Stack
+      maxW="full"
       flexGrow={1}
       paddingInline={{ base: 0, md: 8 }}
       pt={sidebar ? { base: 2, md: 8 } : undefined}
