@@ -106,7 +106,11 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
           <Box
             as="iframe"
             src={demoUrl}
-            h={['string', 'number'].includes(typeof iframe) ? iframe : 80}
+            h={
+              (['string', 'number'].includes(typeof iframe)
+                ? iframe
+                : 80) as number
+            }
           ></Box>
         ) : (
           children

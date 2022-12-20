@@ -34,7 +34,7 @@ export const Nav = chakra(NavLink) as typeof NavLink;
 const SideBarMenu: FC<{
   menu: SideBarData[];
 }> = ({ menu }) => {
-  const groupBorderColor = useColorModeValue('whiteAlpha.500', 'gray.400');
+  const groupBorderColor = useColorModeValue('whiteAlpha.500', 'gray.700');
   const activeLinkColor = useColorModeValue('brand.500', 'brand.300');
   const { pathname } = useLocation();
 
