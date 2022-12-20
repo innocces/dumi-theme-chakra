@@ -3,6 +3,9 @@ import type { SocialMap } from './components/Social';
 import type { Search } from './slots/SearchResult';
 import type { AnnouncementBarConfig } from './slots/AnnouncementBar';
 import type { HeroConfig } from './slots/Hero';
+import type { CodeTheme, PRISMTHEME } from './builtins/SourceCode';
+
+export { PRISMTHEME };
 
 export type ThemeConfig = DocProviderProps & {
   /**
@@ -58,4 +61,16 @@ export type ThemeConfig = DocProviderProps & {
    * @default false
    */
   settingPanelVisible?: boolean;
+  /**
+   * @description <SourceCode /> setting
+   * @description.zh-CN <SourceCode /> 组件配置
+   */
+  code?: {
+    /**
+     * @description prism themes
+     * @description.zh-CN prism themes
+     * @default { dark: PRISMTHEME.VSDARK, light: PRISMTHEME.VSLIGHT }
+     */
+    theme?: CodeTheme;
+  };
 };
