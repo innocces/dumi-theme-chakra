@@ -111,6 +111,7 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
                 ? iframe
                 : 80) as number
             }
+            w="full"
           ></Box>
         ) : (
           children

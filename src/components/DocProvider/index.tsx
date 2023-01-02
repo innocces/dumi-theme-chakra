@@ -47,6 +47,9 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
         global: (props: StyleFunctionProps) => ({
           ...(baseTheme.styles.global ?? {}),
           ...(config?.styles?.global ?? {}),
+          body: {
+            p: 0
+          },
           ...markdown(props)
         })
       },

@@ -41,6 +41,7 @@ const SideBarMenu: FC<{
   return (
     <Box
       w={{ base: 'full', md: '13rem' }}
+      minW={{ base: 'full', md: '13rem' }}
       h={{ base: 'full', md: 'calc(100vh - var(--chakra-sizes-18))' }}
       position={{ base: 'static', md: 'sticky' }}
       top={{ base: 0, md: 18 }}
