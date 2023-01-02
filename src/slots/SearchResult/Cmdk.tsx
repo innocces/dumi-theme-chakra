@@ -180,7 +180,11 @@ const Cmdk: FC<SearchResultCommonType> = ({ isOpen, onClose }) => {
                           }}
                         >
                           <Icon />
-                          <Box flexGrow={1} pl={2}>
+                          <Box
+                            flexGrow={1}
+                            pl={2}
+                            w="calc(100% - 1em - var(--chakra-space-2))"
+                          >
                             <Heading as="h5" size="sm" fontWeight="semibold">
                               <Highlight
                                 query={generateHighlightQuery(
@@ -194,7 +198,14 @@ const Cmdk: FC<SearchResultCommonType> = ({ isOpen, onClose }) => {
                                 {generateHighlightText(highlightTitleTexts)}
                               </Highlight>
                             </Heading>
-                            <Heading as="p" size="xs">
+                            <Heading
+                              as="p"
+                              size="xs"
+                              w="full"
+                              whiteSpace="nowrap"
+                              textOverflow="ellipsis"
+                              overflow="hidden"
+                            >
                               <Highlight
                                 query={generateHighlightQuery(highlightTexts)}
                                 styles={{
