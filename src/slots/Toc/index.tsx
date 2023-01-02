@@ -85,7 +85,7 @@ const Toc: FC = () => {
                     data-depth={item.depth}
                     lineHeight={7}
                     sx={{
-                      '&[data-depth=3]': {
+                      '&[data-depth="3"]': {
                         pl: 2
                       }
                     }}
