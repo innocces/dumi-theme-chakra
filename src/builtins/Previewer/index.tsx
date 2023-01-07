@@ -1,5 +1,5 @@
 import React, { useMemo, type FC, type PropsWithChildren } from 'react';
-import { type IPreviewerProps, useLocation } from 'dumi';
+import { type IPreviewerProps, useLocation, useLocale } from 'dumi';
 
 import PreviewerActions from '../../slots/PreviewerActions';
 import {
@@ -14,20 +14,13 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 
-const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
-  const {
-    asset,
-    iframe,
-    children,
-    className,
-    debug,
-    style,
-    demoUrl,
-    title,
-    description,
-    compact
-  } = props;
+import { getLocalValue } from '../../factory/tools';
 
+const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
+  const { asset, iframe, children, className, debug, style, demoUrl, compact } =
+    props;
+
+  const locale = useLocale();
   const { hash } = useLocation();
   const link = `#${asset.id}`;
   const previewBgColor = useColorModeValue('whiteAlpha.900', 'gray.800');
@@ -35,6 +28,8 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
     'gray.200',
     'whiteAlpha.200'
   );
+  const title = getLocalValue(locale, props, 'title');
+  const description = getLocalValue(locale, props, 'description');
 
   const borderColor = useMemo(() => {
     return link === hash ? 'brand.400' : debug ? 'yellow.300' : 'transparent';

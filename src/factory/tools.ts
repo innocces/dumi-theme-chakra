@@ -1,3 +1,5 @@
+import { useLocale } from 'dumi';
+
 /**
  * @description whether value is typeof object
  * @param {unknown} value check value
@@ -32,10 +34,39 @@ export function isOutLink(link: string): boolean {
   return /^(\w+:)\/\/|^(mailto|tel):/.test(link);
 }
 
+/**
+ * @description isEmpty array or object
+ * @param {unknown} value check value
+ * @returns {boolean}
+ */
 export function isEmpty(value: unknown): boolean {
   return !(Array.isArray(value)
     ? value.length
     : isObject(value)
     ? Object.entries(value).length
     : value);
+}
+
+export type Local = ReturnType<typeof useLocale>;
+
+/**
+ * @description get value by current local
+ * @param {Local} locales
+ * @param {T} localMap
+ * @param {keyof T} key
+ * @returns {R}
+ */
+export function getLocalValue<T = Record<string, any>, R = string | undefined>(
+  locales: Local,
+  localMap: T,
+  key: keyof T
+): R {
+  const { id } = locales;
+  const defaultValue = localMap[key] as R;
+  // use id + base & key for check value
+  if ('base' in locales && !locales.base.includes(id)) {
+    return defaultValue;
+  }
+  const realKey = `${key as string}.${id}`;
+  return (localMap[realKey as keyof T] as R) ?? defaultValue;
 }
