@@ -1,26 +1,26 @@
 ---
 nav:
-  title: Component
+  title: 组件
   order: 2
 toc: content
 ---
 
-# Button
+# Button 按钮
 
-Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+按钮组件用于触发一个动作或事件，如提交一个表单、打开一个对话框、取消一个动作或执行一个删除操作。
 
-## Import
+## 引用
 
 ```jsx | pure
 import { Button } from 'example';
 ```
 
-## Usage
+## 使用
 
 <code src="./demos/ghost.tsx">ghost</code>
 
 <code src="./demos/primary.tsx">primary</code>
 
-## Props
+## 参数
 
 <API id="Button"></API>

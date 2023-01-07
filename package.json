@@ -10,6 +10,7 @@
     "dev:example": "pnpm -F ./example run start",
     "build:father": "father build",
     "build:example": "pnpm -F ./example run build",
+    "up:deps": "pnpm up",
     "prepare": "husky install && father link-dev-theme",
     "lint": "pnpm run lint:es && pnpm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
