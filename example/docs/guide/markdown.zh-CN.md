@@ -1,9 +1,8 @@
 ---
-# nav: 指南
-#   order: -1
+nav: 指南
 group:
   title: 基础
-order: 6
+  order: 0
 ---
 
 # Markdown 增强

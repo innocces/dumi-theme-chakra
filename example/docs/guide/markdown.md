@@ -1,10 +1,8 @@
 ---
-# nav:
-#   title: Guide
-#   order: -1
+nav: Guide
 group:
   title: Basic
-  order: 6
+  order: 0
 ---
 
 # Markdown

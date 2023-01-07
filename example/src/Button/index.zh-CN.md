@@ -2,6 +2,7 @@
 nav:
   title: 组件
   order: 2
+group: 表单
 toc: content
 ---
 

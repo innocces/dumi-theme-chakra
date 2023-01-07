@@ -2,6 +2,7 @@
 nav:
   title: Component
   order: 2
+group: Forms
 toc: content
 ---
 
