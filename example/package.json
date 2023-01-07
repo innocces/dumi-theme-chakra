@@ -1,5 +1,6 @@
 {
   "private": "true",
+  "name": "@example/pkg",
   "description": "chakra theme for dumi2",
   "version": "0.0.1",
   "author": "innocces<jiangjiangjiangxi@gmail.com>",

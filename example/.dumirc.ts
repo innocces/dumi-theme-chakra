@@ -21,6 +21,13 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://dumi-theme-chakra.deno.dev'
   },
+  apiParser: {},
+  resolve: {
+    entryFile: './src/index.ts'
+  },
+  alias: {
+    example: require.resolve('./src/index.ts')
+  },
   clickToComponent: {},
   // pass theme config
   themeConfig: {
@@ -42,12 +49,12 @@ export default defineConfig({
         link: 'https://discord.gg/N82HK72uJk'
       }
     },
-    search: {
-      type: 'docsearch',
-      config: {
-        appId: 'xxxx'
-      }
-    },
+    // search: {
+    //   type: 'docsearch',
+    //   config: {
+    //     appId: 'xxxx'
+    //   }
+    // },
     hero: {
       showVersionBadge: true
     },
