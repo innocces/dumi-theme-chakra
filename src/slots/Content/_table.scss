@@ -1,0 +1,70 @@
+@mixin hetiTable {
+  table {
+    box-sizing: inherit;
+    table-layout: inherit;
+    margin-block-start: inherit;
+    margin-block-end: inherit;
+    margin-inline-start: inherit;
+    margin-inline-end: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    border-color: inherit;
+    word-break: inherit;
+    font-variant-numeric: lining-nums tabular-nums;
+    border-collapse: collapse;
+    width: var(--chakra-sizes-full);
+
+    @include darkmode-style {
+      border-color: inherit;
+    }
+  }
+
+  th {
+    font-family: var(--chakra-fonts-heading);
+    font-weight: var(--chakra-fontWeights-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--chakra-letterSpacings-wider);
+    text-align: start;
+    padding-inline-start: var(--chakra-space-6);
+    padding-inline-end: var(--chakra-space-6);
+    padding-top: var(--chakra-space-3);
+    padding-bottom: var(--chakra-space-3);
+    line-height: var(--chakra-lineHeights-4);
+    font-size: var(--chakra-fontSizes-xs);
+    color: var(--chakra-colors-gray-600);
+    border-width: 0;
+    border-style: inherit;
+    border-bottom: var(--chakra-borders-1px);
+    border-color: var(--chakra-colors-gray-100);
+
+    @include darkmode-style {
+      color: var(--chakra-colors-gray-400);
+      border-color: var(--chakra-colors-gray-700);
+    }
+  }
+  td {
+    padding-inline-start: var(--chakra-space-6);
+    padding-inline-end: var(--chakra-space-6);
+    padding-block-start: inherit;
+    padding-block-end: inherit;
+    padding-top: var(--chakra-space-4);
+    padding-bottom: var(--chakra-space-4);
+    line-height: var(--chakra-lineHeights-5);
+    border-width: 0;
+    border-style: inherit;
+    border-bottom: var(--chakra-borders-1px);
+    border-color: var(--chakra-colors-gray-100);
+
+    @include darkmode-style {
+      border-color: var(--chakra-colors-gray-700);
+    }
+  }
+
+  caption {
+    caption-side: inherit;
+    margin-block-start: inherit;
+    margin-block-end: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

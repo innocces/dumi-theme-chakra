@@ -13,7 +13,10 @@ const markDown: SystemStyleFunction = (props) => ({
 
     '*:not(pre) code': {
       px: 0.5,
-      py: 1.5
+      py: 1.5,
+      bgColor: mode('gray.50', 'gray.800')(props),
+      color: mode('brand.500', 'brand.300')(props),
+      fontSize: 'md'
     },
 
     pre: {
@@ -23,16 +26,11 @@ const markDown: SystemStyleFunction = (props) => ({
     },
 
     table: {
-      w: 'full',
-
       th: {
-        bgColor: 'gray.50'
+        color: mode('gray.600', 'gray.400')(props)
       },
-
       'th, td': {
-        px: 2.5,
-        py: 4,
-        borderColor: 'gray.100'
+        borderColor: mode('gray.100', 'gray.700')(props)
       }
     },
 

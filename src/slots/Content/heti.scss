@@ -5,5 +5,9 @@ $line-length: 100%;
 $darkmode: 'manual';
 $manualmode-dark-selector: '[data-theme="dark"]';
 
-
 @import 'heti/lib/heti.scss';
+@import './_table.scss';
+
+#{$root-selector} {
+  @include hetiTable();
+}
