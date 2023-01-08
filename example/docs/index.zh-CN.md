@@ -6,7 +6,7 @@ hero:
     - text: 快速开始
       link: /zh-CN/guide
     - text: 进阶
-      link: /zh-CN/advance
+      link: /zh-CN/guide/advance
     - text: GitHub
       icon: github
       link: https://github.com/innocces/dumi-theme-chakra

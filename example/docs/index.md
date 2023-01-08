@@ -6,7 +6,7 @@ hero:
     - text: Get Started
       link: /guide
     - text: Advanced
-      link: /advance
+      link: /guide/advance
     - text: GitHub
       icon: github
       link: https://github.com/innocces/dumi-theme-chakra
