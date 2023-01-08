@@ -16,7 +16,7 @@
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && pnpm run build",
-    "version": "changeset version",
+    "version": "changeset && changeset version",
     "release": "changeset publish"
   },
   "keywords": [
@@ -54,7 +54,8 @@
     ]
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
     "dumi": "^2.0.12",
@@ -71,14 +72,14 @@
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^18.0.10",
     "@umijs/lint": "^4.0.42",
-    "dumi": "^2.0.18",
+    "dumi": "^2.1.1",
     "eslint": "^8.31.0",
     "father": "^4.1.2",
     "father-plugin-dumi-theme": "^1.0.0-rc.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "prettier-plugin-organize-imports": "^3.2.1",
     "prettier-plugin-packagejson": "^2.3.0",
     "react": "^18.2.0",
