@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@babel/runtime': ^7.20.7
   '@chakra-ui/icons': ^2.0.15
   '@chakra-ui/react': ^2.4.6
   '@chakra-ui/theme-tools': ^2.0.16
@@ -40,8 +41,10 @@ specifiers:
   stylelint: ^14.16.1
 
 dependencies:
+  '@babel/runtime': 7.20.7
   '@chakra-ui/icons': 2.0.15_7wjnschhdqxnmmgtwx36wzhvlm
   '@chakra-ui/react': 2.4.6_6z66u6efdgokrdxyuxkwijcyzq
+  '@chakra-ui/theme-tools': 2.0.16_ak67p4fuwhwgy7hpxa6ejvcgoy
   '@docsearch/css': 3.3.1
   '@docsearch/react': 3.3.1_4mvbrmqotwuhfzwlcr6w5cftiu
   '@emotion/react': 11.10.5_jp5qgyg6plq757v5hojp7ls2oe
@@ -57,7 +60,6 @@ dependencies:
   react-icons: 4.7.1_react@18.2.0
 
 devDependencies:
-  '@chakra-ui/theme-tools': 2.0.16_ak67p4fuwhwgy7hpxa6ejvcgoy
   '@changesets/changelog-github': 0.4.8
   '@changesets/cli': 2.26.0
   '@commitlint/cli': 17.4.0_@types+node@18.11.18
@@ -697,6 +699,7 @@ packages:
 
   /@chakra-ui/anatomy/2.1.1:
     resolution: {integrity: sha512-LUHAoqJAgxAqmyckG5bUpBrfEo1FleEyY+1A8hkWciy58gZ+h3GoY9oBpHcdo7XdHPpy3G+3hieK/7i9NLwxAw==}
+    dev: false
 
   /@chakra-ui/avatar/2.2.2_7wjnschhdqxnmmgtwx36wzhvlm:
     resolution: {integrity: sha512-wFDK1wT5kQxkpCAX6mPhx9kh0Pi2RnfN32bCRFio4Mmiq0ltfSEWi3/XxlawDr31Ch3T3qbtPVLqn355B4U9ZA==}
@@ -1471,6 +1474,7 @@ packages:
 
   /@chakra-ui/shared-utils/2.0.4:
     resolution: {integrity: sha512-JGWr+BBj3PXGZQ2gxbKSD1wYjESbYsZjkCeE2nevyVk4rN3amV1wQzCnBAhsuJktMaZD6KC/lteo9ou9QUDzpA==}
+    dev: false
 
   /@chakra-ui/skeleton/2.0.21_7wjnschhdqxnmmgtwx36wzhvlm:
     resolution: {integrity: sha512-ztHfV/6Mwl1Wl8H8fkAszMHnyobNZ4SjVD/rImBlKfqSh2VW8jzSwzqN77Oi6iZ7fsqdPN7w2QWS5EAtsUxTVw==}
@@ -1535,6 +1539,7 @@ packages:
       '@chakra-ui/shared-utils': 2.0.4
       csstype: 3.1.1
       lodash.mergewith: 4.6.2
+    dev: false
 
   /@chakra-ui/switch/2.0.19_p72g2qpsppq5sxp4u5fnn2dxya:
     resolution: {integrity: sha512-mXEXrTQAfGnmgAeRcVvcgC98ZaB9/WBSpfVgVKLRVuLhv5XYwhffxxZb9Zqaa3eWb9iilxi3qQUtN0g/wu2G7w==}
@@ -1632,6 +1637,7 @@ packages:
       '@chakra-ui/shared-utils': 2.0.4
       '@chakra-ui/styled-system': 2.5.1
       color2k: 2.0.1
+    dev: false
 
   /@chakra-ui/theme-utils/2.0.8:
     resolution: {integrity: sha512-E4GT1tT5JTwsxRCgopdkLWx6oxd1lrI7DBLiwW0WxvtPmHfy5I9CB4CVnYBNHQZNXiJZyUQpCwKyGg2npGxv5Q==}
@@ -2721,7 +2727,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       hoist-non-react-statics: 3.3.2
       react: 18.1.0
       react-is: 16.13.1
@@ -2733,7 +2739,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       react-is: 16.13.1
@@ -3561,13 +3567,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.10
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.4.10:
     resolution: {integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -4129,7 +4135,7 @@ packages:
   /@umijs/history/5.3.1:
     resolution: {integrity: sha512-/e0cEGrR2bIWQD7pRl3dl9dcyRGeC9hoW0OCvUTT/hjY0EfUrkd6G8ZanVghPMpDuY5usxq9GVcvrT8KNXLWvA==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       query-string: 6.14.1
     dev: true
 
@@ -5466,6 +5472,7 @@ packages:
 
   /color2k/2.0.1:
     resolution: {integrity: sha512-iCg+xrEqtYISsSJZN1z44fyhv4EfX8lSkcDhodt6VnMf1+iMwZxAtmGXchTCeMUnTbXunGvUVK6E3skkApPnZw==}
+    dev: false
 
   /colord/2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
@@ -7948,7 +7955,7 @@ packages:
   /history/5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
     dev: true
 
   /hmac-drbg/1.0.1:
@@ -11605,7 +11612,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.2.0
@@ -11620,7 +11627,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.1.0

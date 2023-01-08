@@ -63,7 +63,6 @@
     "react-dom": ">=16.9.0"
   },
   "devDependencies": {
-    "@chakra-ui/theme-tools": "^2.0.16",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.0",
@@ -87,8 +86,10 @@
     "stylelint": "^14.16.1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.7",
     "@chakra-ui/icons": "^2.0.15",
     "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/theme-tools": "^2.0.16",
     "@docsearch/css": "^3.3.1",
     "@docsearch/react": "^3.3.1",
     "@emotion/react": "^11.10.5",
