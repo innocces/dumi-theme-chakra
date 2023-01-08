@@ -53,8 +53,64 @@ export defineConfig({
 ## Options
 
 ```tsx
-
+export type ThemeConfig = DocProviderProps & {
+  /**
+   * @description.zh-CN 社交配置: 比如 github & discord
+   */
+  social?: SocialMap;
+  /**
+   * @description.zh-CN 自动生成的title分隔符: 格式为: ${themeConfig.title} ${helmetIcon} ${subTitle}
+   */
+  helmetIcon?: string;
+  /**
+   * @description.zh-CN 自定义header meta 描述信息
+   */
+  description?: string;
+  /**
+   * @description.zh-CN 自定义header meta 关键字
+   */
+  keywords?: string[];
+  /**
+   * @description.zh-CN 自定义header meta 作者
+   */
+  author?: string;
+  /**
+   * @description.zh-CN 是否使用搜索. 若为布尔值则表示开启或关闭. 也可以使用对象来配置更多
+   * @default true
+   */
+  search?: boolean | Search;
+  /**
+   * @description.zh-CN 文档头部声明条幅配置
+   */
+  announcementBar?: AnnouncementBarConfig;
+  /**
+   * @description.zh-CN 首页的hero配置
+   */
+  hero?: HeroConfig;
+  /**
+   * @description.zh-CN 文档背景图片. 如果为布尔值, 使用默认背景图片
+   * @default false
+   */
+  thumbBackground?: boolean | string;
+  /**
+   * @description.zh-CN 是否展示主题设置面板
+   * @default false
+   */
+  settingPanelVisible?: boolean;
+  /**
+   * @description.zh-CN <SourceCode /> 组件配置
+   */
+  code?: {
+    /**
+     * @description.zh-CN prism themes
+     * @default { dark: PRISMTHEME.VSDARK, light: PRISMTHEME.VSLIGHT }
+     */
+    theme?: CodeTheme;
+  };
+};
 ```
+
+详情[查看](./src/types.ts)
 
 ## Contribution
 
