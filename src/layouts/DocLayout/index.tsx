@@ -1,44 +1,44 @@
-import React, { type FC, useMemo, useEffect } from 'react';
+import React, { useEffect, useMemo, type FC } from 'react';
 
-import useThemeConfig from '../../hooks/useThemeConfig';
 import useLoading from '../../hooks/useLoading';
+import useThemeConfig from '../../hooks/useThemeConfig';
 
-import {
-  Helmet,
-  useRouteMeta,
-  useOutlet,
-  useSidebarData,
-  useLocation
-} from 'dumi';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
-  Container,
-  HStack,
   Button,
+  Container,
   Hide,
+  HStack,
   Show,
   useColorMode,
   useColorModeValue,
   useDisclosure
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
 import animateScrollTo from 'animated-scroll-to';
-import DocProvider from '../../components/DocProvider';
+import {
+  Helmet,
+  useLocation,
+  useOutlet,
+  useRouteMeta,
+  useSidebarData
+} from 'dumi';
 import SettingPanel from 'dumi/theme/builtins/SettingPanel';
 import AnnouncementBar from 'dumi/theme/slots/AnnouncementBar';
-import Header from 'dumi/theme/slots/Header';
-import NavBar from 'dumi/theme/slots/NavBar';
-import Hero from 'dumi/theme/slots/Hero';
-import Features from 'dumi/theme/slots/Features';
 import Content from 'dumi/theme/slots/Content';
+import Features from 'dumi/theme/slots/Features';
+import Footer from 'dumi/theme/slots/Footer';
+import Header from 'dumi/theme/slots/Header';
+import Hero from 'dumi/theme/slots/Hero';
+import NavBar from 'dumi/theme/slots/NavBar';
 import SideBar from 'dumi/theme/slots/SideBar';
 import Toc from 'dumi/theme/slots/Toc';
-import Footer from 'dumi/theme/slots/Footer';
+import DocProvider from '../../components/DocProvider';
 
 import { isUndefined } from '../../factory/tools';
 
-import heroBackground from '../../media/hero-background.jpg';
 import heroBackgroundDark from '../../media/hero-background-dark.jpg';
+import heroBackground from '../../media/hero-background.jpg';
 
 /**
  * @description cover default struct of dumi layout
