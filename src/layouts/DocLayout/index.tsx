@@ -30,8 +30,8 @@ import Features from 'dumi/theme/slots/Features';
 import Footer from 'dumi/theme/slots/Footer';
 import Header from 'dumi/theme/slots/Header';
 import Hero from 'dumi/theme/slots/Hero';
-import NavBar from 'dumi/theme/slots/NavBar';
-import SideBar from 'dumi/theme/slots/SideBar';
+import NavBar from 'dumi/theme/slots/Navbar';
+import SideBar from 'dumi/theme/slots/Sidebar';
 import Toc from 'dumi/theme/slots/Toc';
 import DocProvider from '../../components/DocProvider';
 
