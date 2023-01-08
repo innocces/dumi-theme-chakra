@@ -7,11 +7,11 @@ import {
   Show,
   useColorModeValue
 } from '@chakra-ui/react';
-import ThemeSwitch from '../ThemeSwitch';
+import ThemeSwitch from 'dumi/theme/slots/ThemeSwitch';
 import Social from '../../components/Social';
-import LangSwitch from '../LangSwitch';
-import Logo from '../Logo';
-import SearchBar from '../SearchBar';
+import LangSwitch from 'dumi/theme/slots/LangSwitch';
+import Logo from 'dumi/theme/slots/Logo';
+import SearchBar from 'dumi/theme/slots/SearchBar';
 
 const Header: FC<PropsWithChildren> = ({ children }) => {
   const bg = useColorModeValue('whiteAlpha.800', 'gray.800');
