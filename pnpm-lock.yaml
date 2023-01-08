@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@babel/runtime': ^7.20.7
   '@chakra-ui/icons': ^2.0.15
   '@chakra-ui/react': ^2.4.6
   '@chakra-ui/theme-tools': ^2.0.16
@@ -41,7 +40,6 @@ specifiers:
   stylelint: ^14.16.1
 
 dependencies:
-  '@babel/runtime': 7.20.7
   '@chakra-ui/icons': 2.0.15_7wjnschhdqxnmmgtwx36wzhvlm
   '@chakra-ui/react': 2.4.6_6z66u6efdgokrdxyuxkwijcyzq
   '@chakra-ui/theme-tools': 2.0.16_ak67p4fuwhwgy7hpxa6ejvcgoy

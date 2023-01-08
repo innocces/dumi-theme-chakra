@@ -24,16 +24,16 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 import animateScrollTo from 'animated-scroll-to';
 import DocProvider from '../../components/DocProvider';
-import SettingPanel from '../../builtins/SettingPanel';
-import AnnouncementBar from '../../slots/AnnouncementBar';
-import Header from '../../slots/Header';
-import NavBar from '../../slots/NavBar';
-import Hero from '../../slots/Hero';
-import Features from '../../slots/Features';
-import Content from '../../slots/Content';
-import SideBar from '../../slots/SideBar';
-import Toc from '../../slots/Toc';
-import Footer from '../../slots/Footer';
+import SettingPanel from 'dumi/theme/builtins/SettingPanel';
+import AnnouncementBar from 'dumi/theme/slots/AnnouncementBar';
+import Header from 'dumi/theme/slots/Header';
+import NavBar from 'dumi/theme/slots/NavBar';
+import Hero from 'dumi/theme/slots/Hero';
+import Features from 'dumi/theme/slots/Features';
+import Content from 'dumi/theme/slots/Content';
+import SideBar from 'dumi/theme/slots/SideBar';
+import Toc from 'dumi/theme/slots/Toc';
+import Footer from 'dumi/theme/slots/Footer';
 
 import { isUndefined } from '../../factory/tools';
 

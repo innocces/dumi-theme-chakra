@@ -1,7 +1,7 @@
 import React, { useMemo, type FC, type PropsWithChildren } from 'react';
 import { type IPreviewerProps, useLocation, useLocale } from 'dumi';
 
-import PreviewerActions from '../../slots/PreviewerActions';
+import PreviewerActions from 'dumi/theme/slots/PreviewerActions';
 import {
   Stack,
   HStack,
