@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.3
+
+### Patch Changes
+
+- fix file alias & camelCase
+
 ## 0.0.2
 
 ### Patch Changes
