@@ -98,7 +98,6 @@ const SearchBar = () => {
             <Kbd>{commandKey} + K</Kbd>
           </Show>
         }
-        borderRadius={{ base: 'md', md: '2xl' }}
         colorScheme="brand"
       >
         <Show above="md">
