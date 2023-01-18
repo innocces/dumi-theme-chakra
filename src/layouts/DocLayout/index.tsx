@@ -33,7 +33,6 @@ import Hero from 'dumi/theme/slots/Hero';
 import NavBar from 'dumi/theme/slots/Navbar';
 import SideBar from 'dumi/theme/slots/Sidebar';
 import Toc from 'dumi/theme/slots/Toc';
-import DocProvider from '../../components/DocProvider';
 
 import { isUndefined } from '../../factory/tools';
 
@@ -189,13 +188,4 @@ const DocLayout: FC = () => {
   );
 };
 
-const DocLayoutWithProvider: FC = () => {
-  const { brand, config } = useThemeConfig() ?? {};
-  return (
-    <DocProvider brand={brand} config={config}>
-      <DocLayout />
-    </DocProvider>
-  );
-};
-
-export default DocLayoutWithProvider;
+export default DocLayout;
