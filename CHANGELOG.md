@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.5
+
+### Patch Changes
+
+- upgrade deps & addon GlobalLayout & DemoLayout
+
 ## 0.0.4
 
 ### Patch Changes
