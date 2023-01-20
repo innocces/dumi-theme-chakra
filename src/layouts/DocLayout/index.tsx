@@ -41,7 +41,6 @@ import heroBackground from '../../media/hero-background.jpg';
 
 /**
  * @description cover default struct of dumi layout
- * @returns
  */
 const DocLayout: FC = () => {
   const themeConfig = useThemeConfig();
