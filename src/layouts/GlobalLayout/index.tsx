@@ -9,9 +9,11 @@ const GlobalLayout: FC = () => {
   const { brand, config } = useThemeConfig() ?? {};
 
   return (
-    <DocProvider brand={brand} config={config}>
-      {outlet}
-    </DocProvider>
+    outlet && (
+      <DocProvider brand={brand} config={config}>
+        {outlet}
+      </DocProvider>
+    )
   );
 };
 

@@ -21,6 +21,10 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://dumi-theme-chakra.deno.dev'
   },
+  // all in one to fix ConfigProvider error
+  codeSplitting: {
+    jsStrategy: 'bigVendors'
+  },
   apiParser: {},
   resolve: {
     entryFile: './src/index.ts'
