@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.6
+
+### Patch Changes
+
+- fix home hero button style & upgrade deps
+
 ## 0.0.5
 
 ### Patch Changes
