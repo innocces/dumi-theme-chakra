@@ -70,7 +70,7 @@ const Hero: FC = () => {
                 variant={!index ? 'solid' : 'outline'}
                 colorScheme={!index ? 'brand' : undefined}
                 leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
-                mb={2}
+                mb="var(--chakra-space-2)!important"
               >
                 {link ? (
                   isOutLink(link) ? (
