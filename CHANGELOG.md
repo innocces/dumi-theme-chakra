@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.7
+
+### Patch Changes
+
+- docSearch struct fixed
+
 ## 0.0.6
 
 ### Patch Changes
