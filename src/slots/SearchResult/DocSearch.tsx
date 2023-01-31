@@ -33,7 +33,7 @@ const DocSearch: FC<SearchResultCommonType> = ({ isOpen, onClose }) => {
   const intl = useIntl();
 
   const algoliaConfig = (isObject(search)
-    ? search
+    ? search.config ?? {}
     : {}) as unknown as DocSearchConfig;
 
   const modalTranslations = ALGOLIA.reduce<

@@ -53,12 +53,14 @@ export default defineConfig({
         link: 'https://discord.gg/N82HK72uJk'
       }
     },
-    // search: {
-    //   type: 'docsearch',
-    //   config: {
-    //     appId: 'xxxx'
-    //   }
-    // },
+    search: {
+      type: 'docsearch',
+      config: {
+        appId: 'CQNSFVVYJA',
+        apiKey: '2c50fefc041d570e018d5d9f569086b7',
+        indexName: 'dumi-theme-chakra'
+      }
+    },
     hero: {
       showVersionBadge: true
     },
