@@ -39,7 +39,7 @@ export type SocialItem = {
   target: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
-export type SocialMap = Record<SOCIALS, SocialItem>;
+export type SocialMap = Partial<Record<SOCIALS, SocialItem>>;
 
 const Social: FC = () => {
   const themeConfig = useThemeConfig();
