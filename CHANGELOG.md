@@ -1,5 +1,14 @@
 # dumi-theme-chakra
 
+## 0.0.8
+
+### Patch Changes
+
+- 1. addon entry file
+  2. style Alert
+  3. Partial Social Type
+  4. upgrade deps
+
 ## 0.0.7
 
 ### Patch Changes

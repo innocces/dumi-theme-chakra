@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 import { description, keywords, author } from './package.json';
-console.log('process.env.gh', process.env.gh);
+console.log('process.env.gh', process.env.gh, process.env.NODE_ENV);
 
 function withGH(uri: string): string {
   const prefix = process.env.gh ? '/dumi-theme-chakra/' : '/';
@@ -25,6 +25,7 @@ export default defineConfig({
   codeSplitting: {
     jsStrategy: 'bigVendors'
   },
+  // ...(process.env.NODE_ENV === 'development' ? {} : { ssr: {} }),
   apiParser: {},
   resolve: {
     entryFile: './src/index.ts'
