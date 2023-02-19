@@ -17,6 +17,8 @@ import { isObject } from '../../factory/tools';
 
 import markdown from './markdown';
 
+export { baseTheme };
+
 export type DocProviderProps = {
   /**
    * @description custom or use inner color scheme of chakra
