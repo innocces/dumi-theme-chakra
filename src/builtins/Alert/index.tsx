@@ -28,7 +28,7 @@ const Alert: FC<PropsWithChildren<AlertProps>> = ({
   ...props
 }) => {
   return (
-    <ChakraAlert {...props}>
+    <ChakraAlert mb={4} {...props}>
       <AlertIcon />
       <AlertTitle>{title}</AlertTitle>
       <AlertDescription>{children ?? content}</AlertDescription>
