@@ -7,6 +7,10 @@ import type { CodeTheme, PRISMTHEME } from './builtins/SourceCode';
 
 export { PRISMTHEME };
 
+export * from './';
+
+export { baseTheme } from './components/DocProvider';
+
 export type ThemeConfig = DocProviderProps & {
   /**
    * @description socails config: like github & discord
