@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.10
+
+### Patch Changes
+
+- generate export to type.ts
+
 ## 0.0.9
 
 ### Patch Changes
