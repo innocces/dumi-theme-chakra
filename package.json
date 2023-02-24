@@ -20,7 +20,6 @@
     "version": "changeset && changeset version",
     "release": "changeset publish"
   },
-  "main": "dist/index.js",
   "keywords": [
     "dumi",
     "dumi-theme",

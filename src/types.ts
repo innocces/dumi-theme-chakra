@@ -7,9 +7,9 @@ import type { CodeTheme, PRISMTHEME } from './builtins/SourceCode';
 
 export { PRISMTHEME };
 
-export * from './';
-
 export { baseTheme } from './components/DocProvider';
+
+export * from './factory/defineThemeConfig';
 
 export type ThemeConfig = DocProviderProps & {
   /**
