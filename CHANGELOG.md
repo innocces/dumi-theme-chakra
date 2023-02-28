@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.11
+
+### Patch Changes
+
+- asyn dumi multi type api
+
 ## 0.0.10
 
 ### Patch Changes
