@@ -22,6 +22,7 @@ specifiers:
   clsx: ^1.2.1
   cmdk: ^0.1.22
   dumi: ^2.1.13
+  dumi-assets-types: ^1.0.1
   eslint: ^8.34.0
   father: ^4.1.5
   father-plugin-dumi-theme: 1.0.0-rc.1
@@ -69,6 +70,7 @@ devDependencies:
   '@types/react-dom': 18.0.11
   '@umijs/lint': 4.0.53_2bcxef3uzav5snyzatdr2h2nti
   dumi: 2.1.13_gnvbprqqa6jdh542ebamso5nuq
+  dumi-assets-types: 1.0.1
   eslint: 8.34.0
   father: 4.1.5_7wd7unodtbgantqy3ngzgxilz4
   father-plugin-dumi-theme: 1.0.0-rc.1_father@4.1.5
@@ -3875,13 +3877,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.21.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.21.1:
     resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -6510,6 +6512,10 @@ packages:
 
   /dumi-afx-deps/1.0.0-alpha.12:
     resolution: {integrity: sha512-my+92PapBT+NFSFwVb60b8nqbOz1moLOfZpD3+XqryzaqCno1MSuX0oYc8TqN0wPLd7nEly8c8TIcaZGwj9U5g==}
+    dev: true
+
+  /dumi-assets-types/1.0.1:
+    resolution: {integrity: sha512-A+fJp7L+Q6nU5S2KgbdnyfRoCkAZy+UFudQ45QPM7W+3LIe8o+Tt0cURIQMnLZMBjoKbItB5IDi+IM39FwFZvQ==}
     dev: true
 
   /dumi-assets-types/2.0.0-alpha.0:

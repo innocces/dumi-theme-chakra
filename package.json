@@ -73,6 +73,7 @@
     "@types/react-dom": "^18.0.11",
     "@umijs/lint": "^4.0.53",
     "dumi": "^2.1.13",
+    "dumi-assets-types": "^1.0.1",
     "eslint": "^8.34.0",
     "father": "^4.1.5",
     "father-plugin-dumi-theme": "1.0.0-rc.1",
