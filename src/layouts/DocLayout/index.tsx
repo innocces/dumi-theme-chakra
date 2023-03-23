@@ -166,7 +166,9 @@ const DocLayout: FC = () => {
         >
           <SideBar isOpen={isOpen} onClose={onClose} />
           <Content>
-            <Box flexGrow={1}>{outlet}</Box>
+            <Box flexGrow={1} position="relative">
+              {outlet}
+            </Box>
             <Footer />
           </Content>
           {routeMeta?.frontmatter?.toc === 'content' && (

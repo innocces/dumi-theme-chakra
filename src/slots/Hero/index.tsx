@@ -36,7 +36,7 @@ const ActionLeftIcon: FC<{ icon: string }> = ({ icon }) =>
   icons[icon] ?? <Image src={icon} alt="action button left icon" />;
 
 const Hero: FC = () => {
-  const hero = useHero();
+  const { config, ...hero } = useHero();
 
   const { actions, description } = hero ?? {};
 
@@ -47,7 +47,11 @@ const Hero: FC = () => {
   if (isEmpty(hero)) return null;
 
   return (
-    <Container maxW="container.xxl" p={{ base: 10, md: 16 }}>
+    <Container
+      data-config={config}
+      maxW="container.xxl"
+      p={{ base: 10, md: 16 }}
+    >
       <HeroTitle />
       <Center>
         <Text
