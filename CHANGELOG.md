@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.12
+
+### Patch Changes
+
+- fix toc error & cover ContentTabs
+
 ## 0.0.11
 
 ### Patch Changes
