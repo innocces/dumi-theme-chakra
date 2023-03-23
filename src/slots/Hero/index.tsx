@@ -36,8 +36,8 @@ const ActionLeftIcon: FC<{ icon: string }> = ({ icon }) =>
   icons[icon] ?? <Image src={icon} alt="action button left icon" />;
 
 const Hero: FC = () => {
-  const { config, ...hero } = useHero();
-  console.log(config);
+  const hero = useHero();
+
   const { actions, description } = hero ?? {};
 
   const showActionButtons = useMemo<boolean>(() => {

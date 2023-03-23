@@ -86,7 +86,13 @@ const Features: FC = () => {
                 >
                   <Title link={link}>{title}</Title>
                   {tag && (
-                    <Tag color="white" ml={2} colorScheme="brand" size="sm">
+                    <Tag
+                      bg={cardIconBackground}
+                      opacity={0.7}
+                      ml={2}
+                      colorScheme="brand"
+                      size="sm"
+                    >
                       {tag}
                     </Tag>
                   )}

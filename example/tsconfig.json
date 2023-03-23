@@ -3,7 +3,8 @@
   "compilerOptions": {
     "paths": {
       "@@/*": [".dumi/tmp/*"]
-    }
+    },
+    "resolveJsonModule": true
   },
   "include": [".dumi/**/*", ".dumirc.ts"]
 }
