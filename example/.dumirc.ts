@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
+import { defineThemeConfig } from './.dumi/theme';
 
 import { description, keywords, author } from './package.json';
-console.log('process.env.gh', process.env.gh, process.env.NODE_ENV);
 
 function withGH(uri: string): string {
   const prefix = process.env.gh ? '/dumi-theme-chakra/' : '/';
@@ -39,38 +39,40 @@ export default defineConfig({
   themeConfig: {
     name: 'Chakra Theme',
     logo: withGH('dumi-theme-chakra-logo.png'),
-    helmetIcon: '🍺',
-    settingPanelVisible: true,
-    thumbBackground: true,
-    description,
-    keywords,
-    author,
-    social: {
-      github: {
-        name: 'dumi-theme-chakra',
-        link: 'https://github.com/innocces/dumi-theme-chakra'
+    ...defineThemeConfig({
+      helmetIcon: '🍺',
+      settingPanelVisible: true,
+      thumbBackground: true,
+      description,
+      keywords,
+      author,
+      social: {
+        github: {
+          name: 'dumi-theme-chakra',
+          link: 'https://github.com/innocces/dumi-theme-chakra'
+        },
+        discord: {
+          name: 'maryoku-ui-discord',
+          link: 'https://discord.gg/N82HK72uJk'
+        }
       },
-      discord: {
-        name: 'maryoku-ui-discord',
-        link: 'https://discord.gg/N82HK72uJk'
+      search: {
+        type: 'docsearch',
+        config: {
+          appId: 'CQNSFVVYJA',
+          apiKey: '2c50fefc041d570e018d5d9f569086b7',
+          indexName: 'dumi-theme-chakra'
+        }
+      },
+      hero: {
+        showVersionBadge: true
+      },
+      announcementBar: {
+        id: 'announce current progress info',
+        content: 'dumi-theme-chakra: use Chakra-UI buildIn for Dumi2',
+        isCloseable: true
       }
-    },
-    search: {
-      type: 'docsearch',
-      config: {
-        appId: 'CQNSFVVYJA',
-        apiKey: '2c50fefc041d570e018d5d9f569086b7',
-        indexName: 'dumi-theme-chakra'
-      }
-    },
-    hero: {
-      showVersionBadge: true
-    },
-    announcementBar: {
-      id: 'announce current progress info',
-      content: 'dumi-theme-chakra: use Chakra-UI buildIn for Dumi2',
-      isCloseable: true
-    },
+    }),
     footer: `Copyright © ${new Date().getFullYear()} Dumi-Theme-Chakra.Innocces`
   }
 });
