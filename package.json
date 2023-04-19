@@ -3,14 +3,7 @@
   "version": "0.0.14",
   "description": "chakra theme for dumi2",
   "types": "dist/types.d.ts",
-  "exports": {
-    ".": {
-      "default": "./dist/index.js"
-    },
-    "./defineThemeConfig": {
-      "default": "./dist/cjs/defineThemeConfig.js"
-    }
-  },
+  "main": "dist/cjs/index.js",
   "scripts": {
     "dev": "run-p dev:*",
     "build": "run-s build:*",
