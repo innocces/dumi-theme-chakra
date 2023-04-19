@@ -39,7 +39,7 @@ $ pnpm add dumi-theme-chakra -D
 
 ```ts
 import { defineConfig } from 'dumi';
-import defineThemeConfig from 'dumi-theme-chakra/factory/defineThemeConfig.ts'
+import { defineThemeConfig } from 'dumi-theme-chakra';
 
 export defineConfig({
   themeConfig: {

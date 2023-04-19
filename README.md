@@ -39,7 +39,7 @@ configure it in dumi config file `.dumirc.ts`:
 
 ```ts
 import { defineConfig } from 'dumi';
-import defineThemeConfig from 'dumi-theme-chakra/factory/defineThemeConfig.ts'
+import { defineThemeConfig } from 'dumi-theme-chakra';
 
 export defineConfig({
   themeConfig: {
