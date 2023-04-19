@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.13
+
+### Patch Changes
+
+- addon main field for config tools & SearchType refactor
+
 ## 0.0.12
 
 ### Patch Changes
