@@ -1,4 +1,8 @@
 import type { ThemeConfig } from '../types';
+import { baseTheme } from '../components/DocProvider';
+import { prismThemes } from '../builtins/SourceCode';
+
+export { baseTheme, prismThemes };
 
 /**
  * @description provider declaration of config files
