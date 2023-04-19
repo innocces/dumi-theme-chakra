@@ -3,6 +3,7 @@
   "version": "0.0.12",
   "description": "chakra theme for dumi2",
   "types": "dist/types.d.ts",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "run-p dev:*",
     "build": "run-s build:*",
