@@ -3,6 +3,8 @@ import Cmdk from './Cmdk';
 
 import useSearchAble from '../../hooks/useSearchAble';
 
+export type SearchType = 'cmdk' | 'docsearch';
+
 export enum SEARCHTYPE {
   /**
    * @description use cmdk & dumi origin search
@@ -17,9 +19,9 @@ export enum SEARCHTYPE {
 export type Search = {
   /**
    * @description site search type
-   * @default SEARCHTYPE.CMDK
+   * @default cmdk
    */
-  type: SEARCHTYPE;
+  type: SearchType;
   /**
    * @description DocSearchConfig
    */

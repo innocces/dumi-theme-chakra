@@ -36,7 +36,7 @@ export type SocialItem = {
    * @description anchor open way
    * @default __blank
    */
-  target: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
 export type SocialMap = Partial<Record<SOCIALS, SocialItem>>;
