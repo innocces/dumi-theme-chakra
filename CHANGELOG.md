@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.13
+
+### Patch Changes
+
+- addon export setting
+
 ## 0.0.12
 
 ### Patch Changes
