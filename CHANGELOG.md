@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.15
+
+### Patch Changes
+
+- fix commonjs entry
+
 ## 0.0.13
 
 ### Patch Changes
