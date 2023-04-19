@@ -2,7 +2,12 @@ import React, { useCallback, useEffect, useMemo } from 'react';
 
 import { Button, Kbd, Show, Hide, useDisclosure } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import { useSearchAble, DocSearch, Cmdk, SEARCHTYPE } from '../SearchResult';
+import {
+  useSearchAble,
+  DocSearch,
+  Cmdk,
+  type SearchType
+} from '../SearchResult';
 
 import { useIntl, useSiteSearch } from 'dumi';
 import useThemeConfig from '../../hooks/useThemeConfig';
@@ -67,16 +72,15 @@ const SearchBar = () => {
     return () => document.removeEventListener('keydown', handler);
   }, [searchAble]);
 
-  const searchType = useMemo<SEARCHTYPE>(() => {
+  const searchType = useMemo<SearchType>(() => {
     if (
       isUndefined(themeConfig.search) ||
       (typeof themeConfig.search === 'boolean' && themeConfig.search)
     )
-      return SEARCHTYPE.CMDK;
+      return 'cmdk';
     return (
-      (isObject(themeConfig.search)
-        ? themeConfig.search?.type
-        : SEARCHTYPE.CMDK) ?? SEARCHTYPE.CMDK
+      (isObject(themeConfig.search) ? themeConfig.search?.type : 'cmdk') ??
+      'cmdk'
     );
   }, [themeConfig]);
 
@@ -107,7 +111,7 @@ const SearchBar = () => {
           <SearchIcon />
         </Hide>
       </Button>
-      {searchType === SEARCHTYPE.CMDK ? (
+      {searchType === 'cmdk' ? (
         <Cmdk isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
       ) : (
         <DocSearch isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
