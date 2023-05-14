@@ -16,19 +16,7 @@ toc: content
 socails config: like github & discord
 
 ```ts | pure
-/**
- * @description social type enum
- */
-export enum SOCIALS {
-  /**
-   * github
-   */
-  GITHUB = 'github',
-  /**
-   * discord
-   */
-  DISCORD = 'discord'
-}
+export type Socials = 'github' | 'discord' | string;
 
 /**
  * @description social item config
@@ -43,13 +31,17 @@ export type SocialItem = {
    */
   link: string;
   /**
+   * @description custom icon url
+   */
+  icon?: string;
+  /**
    * @description anchor open way
    * @default __blank
    */
   target: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
-export type SocialMap = Record<SOCIALS, SocialItem>;
+export type SocialMap = Record<Socials, SocialItem>;
 ```
 
 ## helmetIcon

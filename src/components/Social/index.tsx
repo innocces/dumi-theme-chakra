@@ -2,7 +2,7 @@ import React, { type FC, type AnchorHTMLAttributes } from 'react';
 
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-import { Stack, Button, Icon } from '@chakra-ui/react';
+import { Stack, Button, Icon, Image } from '@chakra-ui/react';
 import { VscGithub as Github } from 'react-icons/vsc';
 import { SiDiscord as Discord } from 'react-icons/si';
 
@@ -20,6 +20,8 @@ export enum SOCIALS {
   DISCORD = 'discord'
 }
 
+export type Socials = 'github' | 'discord' | string;
+
 /**
  * @description social item config
  */
@@ -33,13 +35,17 @@ export type SocialItem = {
    */
   link: string;
   /**
+   * @description custom icon url
+   */
+  icon?: string;
+  /**
    * @description anchor open way
    * @default __blank
    */
   target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
-export type SocialMap = Partial<Record<SOCIALS, SocialItem>>;
+export type SocialMap = Partial<Record<Socials, SocialItem>>;
 
 const Social: FC = () => {
   const themeConfig = useThemeConfig();
@@ -49,8 +55,15 @@ const Social: FC = () => {
 
   return (
     <Stack direction="row" spacing={0}>
-      {Object.entries(social).map(
-        ([type, { name, link, target = '__blank' }]) => (
+      {Object.entries(social).map(([type, socialItem]) => {
+        const { name, link, target = '__blank', icon } = socialItem!;
+        const socialIcon =
+          type === 'github' ? (
+            <Icon as={Github} />
+          ) : type === 'discord' ? (
+            <Icon as={Discord} />
+          ) : null;
+        return (
           <Button
             as="a"
             variant="ghost"
@@ -61,14 +74,10 @@ const Social: FC = () => {
             fontSize="xl"
             padding={0}
           >
-            {type === SOCIALS.GITHUB ? (
-              <Icon as={Github} />
-            ) : (
-              <Icon as={Discord} />
-            )}
+            {icon ? <Image src={icon} width={20} height={20} /> : socialIcon}
           </Button>
-        )
-      )}
+        );
+      })}
     </Stack>
   );
 };

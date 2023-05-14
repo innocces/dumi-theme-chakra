@@ -19,16 +19,7 @@ toc: content
 /**
  * @description 社交类型枚举
  */
-export enum SOCIALS {
-  /**
-   * github
-   */
-  GITHUB = 'github',
-  /**
-   * discord
-   */
-  DISCORD = 'discord'
-}
+export type Socials = 'github' | 'discord' | string;
 
 /**
  * @description 社交项目配置
@@ -43,13 +34,17 @@ export type SocialItem = {
    */
   link: string;
   /**
+   * @description 自定义icon资源地址
+   */
+  icon?: string;
+  /**
    * @description 页面打开方式
    * @default __blank
    */
   target: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
-export type SocialMap = Record<SOCIALS, SocialItem>;
+export type SocialMap = Record<Socials, SocialItem>;
 ```
 
 ## helmetIcon
