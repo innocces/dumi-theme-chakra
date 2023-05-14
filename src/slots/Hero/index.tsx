@@ -67,28 +67,32 @@ const Hero: FC = () => {
       {showActionButtons && (
         <Center>
           <HStack wrap="wrap">
-            {actions!.map(({ icon, text, link }, index) => (
-              <Button
-                key={index}
-                size="lg"
-                variant={!index ? 'solid' : 'outline'}
-                colorScheme={!index ? 'brand' : undefined}
-                leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
-                mb="var(--chakra-space-2)!important"
-              >
-                {link ? (
-                  isOutLink(link) ? (
-                    <a href={link} target="_blank" rel="noreferrer">
-                      {text}
-                    </a>
-                  ) : (
-                    <Link to={link}>{text}</Link>
-                  )
+            {actions!.map(({ icon, text, link }, index) => {
+              const ActionButton = (
+                <Button
+                  key={index}
+                  size="lg"
+                  variant={!index ? 'solid' : 'outline'}
+                  colorScheme={!index ? 'brand' : undefined}
+                  leftIcon={icon ? <ActionLeftIcon icon={icon} /> : undefined}
+                  mb="var(--chakra-space-2)!important"
+                >
+                  {text}
+                </Button>
+              );
+
+              if (link) {
+                return isOutLink(link) ? (
+                  <a href={link} target="_blank" rel="noreferrer">
+                    {ActionButton}
+                  </a>
                 ) : (
-                  text
-                )}
-              </Button>
-            ))}
+                  <Link to={link}>{ActionButton}</Link>
+                );
+              }
+
+              return ActionButton;
+            })}
           </HStack>
         </Center>
       )}
