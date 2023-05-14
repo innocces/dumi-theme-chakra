@@ -34,22 +34,29 @@ const Nav = () => {
       {nav.map(({ link, title }) => {
         // TODO: activePath may use root locale, active error
         const outLink = isOutLink(link);
-        return (
+        const actionButton = (
           <Button
             variant="ghost"
-            key={link}
             _hover={{ color: activeLinkColor }}
             className={pathname.startsWith(link) ? 'active' : ''}
             sx={{ '&.active': { color: activeLinkColor } }}
           >
-            {outLink ? (
-              <a href={link} target="_blank" rel="noreferrer">
-                title
-              </a>
-            ) : (
-              <Link to={link}>{title}</Link>
-            )}
+            {title}
           </Button>
+        );
+
+        if (outLink) {
+          return (
+            <a key={link} href={link} target="_blank" rel="noreferrer">
+              {actionButton}
+            </a>
+          );
+        }
+
+        return (
+          <Link key={link} to={link}>
+            {actionButton}
+          </Link>
         );
       })}
     </HStack>
