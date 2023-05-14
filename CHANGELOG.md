@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.16
+
+### Patch Changes
+
+- fix click area error & support custom icon url
+
 ## 0.0.15
 
 ### Patch Changes
