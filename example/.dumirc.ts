@@ -18,9 +18,9 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文' }
   ],
   devtool: 'cheap-module-source-map',
-  sitemap: {
-    hostname: 'https://dumi-theme-chakra.deno.dev'
-  },
+  // sitemap: {
+  //   hostname: 'https://dumi-theme-chakra.deno.dev'
+  // },
   esbuildMinifyIIFE: true,
   // all in one to fix ConfigProvider error
   codeSplitting: {
