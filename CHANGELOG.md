@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.17
+
+### Patch Changes
+
+- nprogress config & cmdk mode search close icon
+
 ## 0.0.16
 
 ### Patch Changes
