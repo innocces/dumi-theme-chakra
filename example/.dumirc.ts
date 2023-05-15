@@ -37,6 +37,8 @@ export default defineConfig({
   clickToComponent: {},
   // pass theme config
   themeConfig: {
+    // https://github.com/umijs/dumi/issues/1655
+    nprogress: false,
     name: 'Chakra Theme',
     logo: withGH('dumi-theme-chakra-logo.png'),
     ...defineThemeConfig({
