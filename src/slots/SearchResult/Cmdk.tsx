@@ -15,10 +15,8 @@ import {
   Button,
   InputGroup,
   Input,
-  InputRightElement,
   Divider,
   Hide,
-  Show,
   Spinner,
   chakra,
   Stack,
@@ -28,7 +26,6 @@ import {
   type ComponentWithAs
 } from '@chakra-ui/react';
 import {
-  CloseIcon,
   NotAllowedIcon,
   LinkIcon,
   InfoIcon,
@@ -91,6 +88,7 @@ const Cmdk: FC<SearchResultCommonType> = ({ isOpen, onClose }) => {
         <ChakraCommand>
           <InputGroup>
             <Input
+              autoFocus
               colorScheme="brand"
               border="none"
               borderRadius={0}
@@ -103,17 +101,6 @@ const Cmdk: FC<SearchResultCommonType> = ({ isOpen, onClose }) => {
                 id: 'header.search.placeholder'
               })}
             />
-            <Show above="md">
-              <InputRightElement>
-                <Button
-                  variant="unstyle"
-                  size="xs"
-                  onClick={() => setKeywords('')}
-                >
-                  <CloseIcon />
-                </Button>
-              </InputRightElement>
-            </Show>
           </InputGroup>
           <Divider marginBlock={3} />
           <ChakraList
