@@ -1,4 +1,4 @@
-import React, { useMemo, type FC, type PropsWithChildren } from 'react';
+import React, { useMemo, useRef, type FC, type PropsWithChildren } from 'react';
 import { type IPreviewerProps, useLocation, useLocale } from 'dumi';
 
 import PreviewerActions from 'dumi/theme/slots/PreviewerActions';
@@ -22,6 +22,7 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
 
   const locale = useLocale();
   const { hash } = useLocation();
+  const demoContainer = useRef<HTMLDivElement>(null);
   const link = `#${asset.id}`;
   const previewBgColor = useColorModeValue('whiteAlpha.900', 'gray.800');
   const headingDefaultBorderColor = useColorModeValue(
@@ -96,6 +97,7 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
       <Box
         paddingBlock={iframe || compact ? 0 : 10}
         paddingInline={iframe || compact ? 0 : 5}
+        ref={demoContainer}
       >
         {iframe ? (
           <Box
@@ -113,7 +115,14 @@ const Previewer: FC<PropsWithChildren<IPreviewerProps>> = (props) => {
         )}
       </Box>
       <Box>
-        <PreviewerActions {...props} />
+        <PreviewerActions
+          {...props}
+          demoContainer={
+            iframe
+              ? demoContainer.current?.firstElementChild
+              : demoContainer.current
+          }
+        />
       </Box>
     </Stack>
   );

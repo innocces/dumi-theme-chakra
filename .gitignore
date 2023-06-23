@@ -8,4 +8,6 @@
 .dumi/tmp-production
 .DS_Store
 
+*.error.log
+
 serve/web

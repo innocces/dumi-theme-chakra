@@ -1,27 +1,12 @@
-import React, {
-  type FC,
-  type PropsWithChildren,
-  useRef,
-  useCallback,
-  useMemo
-} from 'react';
+import React, { type FC, type PropsWithChildren, useMemo } from 'react';
 
 import Highlight, {
   defaultProps,
   type Language,
   type PrismTheme
 } from 'prism-react-renderer';
-import {
-  Button,
-  Stack,
-  HStack,
-  Box,
-  Text,
-  useColorModeValue,
-  useBoolean
-} from '@chakra-ui/react';
-import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import { Stack, HStack, Box, Text, useColorModeValue } from '@chakra-ui/react';
+import Copy from '../../components/Copy';
 
 import dracula from 'prism-react-renderer/themes/dracula';
 import duotoneLight from 'prism-react-renderer/themes/duotoneLight';
@@ -102,15 +87,6 @@ const SourceCode: FC<PropsWithChildren<SourceCodeProps>> = ({
   showlinenumber,
   theme
 }) => {
-  const timer = useRef<NodeJS.Timeout>();
-  const [isCopied, { toggle }] = useBoolean();
-
-  const afterCopy = useCallback(() => {
-    toggle();
-    clearTimeout(timer.current);
-    timer.current = setTimeout(toggle, 2000);
-  }, []);
-
   const [lightTheme, darkTheme] = useMemo<PrismTheme[]>(() => {
     const propsTheme = theme ?? defaultTheme;
     if (typeof propsTheme === 'string' && propsTheme in prismThemes)
@@ -147,11 +123,7 @@ const SourceCode: FC<PropsWithChildren<SourceCodeProps>> = ({
           opacity: 1
         }}
       >
-        <CopyToClipboard text={children as string} onCopy={afterCopy}>
-          <Button colorScheme="brand" variant="ghost">
-            {isCopied ? <CheckIcon color="brand.300" /> : <CopyIcon />}
-          </Button>
-        </CopyToClipboard>
+        <Copy text={children as string} colorScheme="brand" variant="ghost" />
       </HStack>
       <Highlight
         {...defaultProps}
@@ -167,7 +139,7 @@ const SourceCode: FC<PropsWithChildren<SourceCodeProps>> = ({
             mt="0!important"
             paddingBlock={4}
             paddingInline={5}
-            overflow="scroll"
+            overflow="auto"
           >
             {tokens.map((line, i) => (
               <Box

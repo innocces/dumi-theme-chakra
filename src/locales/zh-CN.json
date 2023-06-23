@@ -28,5 +28,6 @@
   "theme.header": "主题设置",
   "theme.cancel": "取消",
   "theme.confirm": "保存主题",
-  "theme.choose": "选择"
+  "theme.choose": "选择",
+  "previewer.actions.html2canvas": "拷贝到 Sketch"
 }
