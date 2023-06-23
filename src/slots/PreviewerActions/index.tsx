@@ -1,9 +1,11 @@
-import React, { type FC, useCallback, useMemo } from 'react';
+import React, { type FC, useCallback, useMemo, useRef } from 'react';
 
 import {
   openCodeSandbox,
   openStackBlitz,
   FormattedMessage,
+  // @ts-ignore
+  getSketchJSON,
   type IPreviewerProps
 } from 'dumi';
 
@@ -14,6 +16,7 @@ import {
   AiOutlineBranches
 } from 'react-icons/ai';
 import { BsCode, BsCodeSlash } from 'react-icons/bs';
+import { AiOutlineSketch } from 'react-icons/ai';
 
 import {
   Icon,
@@ -21,17 +24,36 @@ import {
   HStack,
   Tooltip,
   Collapse,
+  Popover,
+  VStack,
+  Box,
   useDisclosure,
-  useColorModeValue
+  useColorModeValue,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverBody
 } from '@chakra-ui/react';
-import Tabs, { TabList, TabPanel, TabPanels, Tab } from '../../builtins/Tabs';
+import Tabs, {
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tab
+} from 'dumi/theme/builtins/Tabs';
 import SourceCode, {
   type SourceCodeProps,
   type CodeTheme
-} from '../../builtins/SourceCode';
+} from 'dumi/theme/builtins/SourceCode';
+import Copy from '../../components/Copy';
+
 import useThemeConfig from '../../hooks/useThemeConfig';
 
-export type Actions = 'CSB' | 'CODEPEN' | 'STACKBLITZ' | 'EXTERNAL';
+export type Actions =
+  | 'CSB'
+  | 'CODEPEN'
+  | 'STACKBLITZ'
+  | 'EXTERNAL'
+  | 'HTML2SKETCH';
 
 export interface IPreviewerActionsProps extends IPreviewerProps {
   /**
@@ -50,9 +72,11 @@ const PreviewerActions: FC<
     forceShowCode,
     showlinenumber,
     demoUrl,
-    theme: formatTheme
+    theme: formatTheme,
+    demoContainer
   } = props;
   const { code } = useThemeConfig();
+  const sketchInstanceRef = useRef();
   const checkActionEnable = useCallback<(action: Actions) => boolean>(
     (action) => {
       return !disabledActions?.includes(action);
@@ -69,6 +93,15 @@ const PreviewerActions: FC<
   const computedLang = useCallback<(key?: number) => any>(
     (key = 0) => files[key][0].match(/\.([^.]+)$/)?.[1] || 'text',
     [files]
+  );
+
+  const handleSketch = useCallback(
+    (type: 'group' | 'symbol') => {
+      return getSketchJSON(demoContainer, { type }).then(() =>
+        (sketchInstanceRef.current as unknown as HTMLElement)?.click?.()
+      );
+    },
+    [demoContainer]
   );
 
   const sourceCodeTheme = useMemo<CodeTheme | undefined>(() => {
@@ -116,6 +149,50 @@ const PreviewerActions: FC<
               <Icon as={AiOutlineThunderbolt} />
             </Button>
           </Tooltip>
+        )}
+        {checkActionEnable('HTML2SKETCH') && getSketchJSON && (
+          <Popover trigger="hover" placement="bottom">
+            <Tooltip
+              hasArrow
+              placement="top"
+              label={<FormattedMessage id="previewer.actions.html2canvas" />}
+            >
+              <Box>
+                <PopoverTrigger>
+                  <Copy
+                    // @ts-ignore
+                    ref={sketchInstanceRef}
+                    variant="ghost"
+                    paddingInline={2}
+                    minW={6}
+                  >
+                    <Icon as={AiOutlineSketch} />
+                  </Copy>
+                </PopoverTrigger>
+              </Box>
+            </Tooltip>
+            <PopoverContent w="max-content">
+              <PopoverArrow />
+              <PopoverBody w="max-content">
+                <VStack w="max-content" alignItems="center">
+                  <Button
+                    variant="link"
+                    colorScheme="brand"
+                    onClick={() => handleSketch('group')}
+                  >
+                    <FormattedMessage id="previewer.actions.sketch.group" />
+                  </Button>
+                  <Button
+                    variant="link"
+                    colorScheme="brand"
+                    onClick={() => handleSketch('symbol')}
+                  >
+                    <FormattedMessage id="previewer.actions.sketch.symbol" />
+                  </Button>
+                </VStack>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
         )}
         {checkActionEnable('EXTERNAL') && (
           <Tooltip

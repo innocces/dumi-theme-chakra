@@ -34,6 +34,7 @@ export default defineConfig({
   alias: {
     example: require.resolve('./src/index.ts')
   },
+  html2sketch: {},
   clickToComponent: {},
   // pass theme config
   themeConfig: {
