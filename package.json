@@ -1,6 +1,6 @@
 {
   "name": "dumi-theme-chakra",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "chakra theme for dumi2",
   "types": "dist/types.d.ts",
   "main": "dist/cjs/index.js",
