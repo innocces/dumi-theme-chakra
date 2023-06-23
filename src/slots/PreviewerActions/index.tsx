@@ -1,4 +1,4 @@
-import React, { type FC, useCallback, useMemo, useRef } from 'react';
+import React, { type FC, useCallback, useMemo, useState, useRef } from 'react';
 
 import {
   openCodeSandbox,
@@ -77,6 +77,7 @@ const PreviewerActions: FC<
   } = props;
   const { code } = useThemeConfig();
   const sketchInstanceRef = useRef();
+  const [sketchComponent, setSketchComponent] = useState<string>();
   const checkActionEnable = useCallback<(action: Actions) => boolean>(
     (action) => {
       return !disabledActions?.includes(action);
@@ -97,9 +98,10 @@ const PreviewerActions: FC<
 
   const handleSketch = useCallback(
     (type: 'group' | 'symbol') => {
-      return getSketchJSON(demoContainer, { type }).then(() =>
-        (sketchInstanceRef.current as unknown as HTMLElement)?.click?.()
-      );
+      return getSketchJSON(demoContainer, { type }).then((data: any) => {
+        setSketchComponent(JSON.stringify(data));
+        (sketchInstanceRef.current as unknown as HTMLElement)?.click?.();
+      });
     },
     [demoContainer]
   );
@@ -160,6 +162,7 @@ const PreviewerActions: FC<
               <Box>
                 <PopoverTrigger>
                   <Copy
+                    text={sketchComponent!}
                     // @ts-ignore
                     ref={sketchInstanceRef}
                     variant="ghost"
