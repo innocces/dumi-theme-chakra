@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.20
+
+### Patch Changes
+
+- fix copy to sketch error
+
 ## 0.0.19
 
 ### Patch Changes
