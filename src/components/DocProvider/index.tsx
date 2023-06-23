@@ -56,6 +56,15 @@ const DocProvider: FC<PropsWithChildren<DocProviderProps>> = ({
         })
       },
       ...(config ?? {}),
+      fonts: Object.entries(baseTheme.fonts).reduce(
+        (fonts, [key, value]) => ({
+          ...fonts,
+          [key]:
+            'Inter Variable, ' +
+            (config?.fonts?.[key as keyof typeof baseTheme.fonts] ?? value)
+        }),
+        baseTheme.fonts
+      ),
       colors: {
         brand: themeBrand,
         ...(config?.colors ?? {})
