@@ -29,6 +29,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.13)(react@18.2.0)
+  '@fontsource-variable/inter':
+    specifier: ^5.0.3
+    version: 5.0.3
   '@makotot/ghostui':
     specifier: ^2.0.0
     version: 2.0.0(react@18.2.0)
@@ -2742,6 +2745,10 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
     dev: true
+
+  /@fontsource-variable/inter@5.0.3:
+    resolution: {integrity: sha512-AIE1Lm2/cNkCD4oAJ3JVY54tGhlUS7NnAiqGmE045v+7XHqmUhSYjhQNUgnBGcenth4bN75l+KIeTDbcGc7Emw==}
+    dev: false
 
   /@formatjs/ecma402-abstract@1.17.0:
     resolution: {integrity: sha512-6ueQTeJZtwKjmh23bdkq/DMqH4l4bmfvtQH98blOSbiXv/OUiyijSW6jU22IT8BNM1ujCaEvJfTtyCYVH38EMQ==}
