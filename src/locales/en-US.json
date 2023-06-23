@@ -28,5 +28,6 @@
   "theme.header": "Theme Config",
   "theme.cancel": "Cancel",
   "theme.confirm": "Save Theme",
-  "theme.choose": "Choose"
+  "theme.choose": "Choose",
+  "previewer.actions.html2canvas": "Copy to Sketch app"
 }
