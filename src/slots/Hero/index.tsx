@@ -83,11 +83,13 @@ const Hero: FC = () => {
 
               if (link) {
                 return isOutLink(link) ? (
-                  <a href={link} target="_blank" rel="noreferrer">
+                  <a href={link} target="_blank" rel="noreferrer" key={index}>
                     {ActionButton}
                   </a>
                 ) : (
-                  <Link to={link}>{ActionButton}</Link>
+                  <Link key={index} to={link}>
+                    {ActionButton}
+                  </Link>
                 );
               }
 
