@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.21
+
+### Patch Changes
+
+- fix hero key warning error
+
 ## 0.0.20
 
 ### Patch Changes
