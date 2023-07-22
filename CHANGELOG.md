@@ -1,5 +1,11 @@
 # dumi-theme-chakra
 
+## 0.0.22
+
+### Patch Changes
+
+- update deps
+
 ## 0.0.21
 
 ### Patch Changes
